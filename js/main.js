@@ -1,4 +1,4 @@
-/* Cloud Industry — interactions & motion
+/* Cloud Industry — hosting platform interactions
    Motion stack: GSAP ScrollTrigger + Lenis (CDN), feature-detected.
    Everything degrades gracefully without them and respects
    prefers-reduced-motion. */
@@ -7,7 +7,6 @@
   "use strict";
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const finePointer = window.matchMedia("(pointer: fine)").matches;
   const hasGSAP = typeof window.gsap !== "undefined" && typeof window.ScrollTrigger !== "undefined";
   const hasLenis = typeof window.Lenis !== "undefined";
   const useGSAP = hasGSAP && !reduceMotion;
@@ -31,7 +30,9 @@
     // keep anchor links working through Lenis
     document.querySelectorAll('a[href^="#"]').forEach((a) => {
       a.addEventListener("click", (e) => {
-        const target = document.querySelector(a.getAttribute("href"));
+        const href = a.getAttribute("href");
+        if (href === "#") return; // placeholder links (querySelector("#") throws)
+        const target = document.querySelector(href);
         if (target) { e.preventDefault(); lenis.scrollTo(target, { offset: -70 }); }
       });
     });
@@ -42,9 +43,9 @@
   const themeButtons = document.querySelectorAll(".theme-toggle");
   const applyTheme = (t) => {
     rootEl.dataset.theme = t;
-    themeButtons.forEach((b) => { b.textContent = t === "light" ? "☀" : "☾"; });
+    themeButtons.forEach((b) => { b.textContent = t === "light" ? "☾" : "☀"; });
   };
-  applyTheme(rootEl.dataset.theme || "dark");
+  applyTheme(rootEl.dataset.theme || "light");
   themeButtons.forEach((b) =>
     b.addEventListener("click", () => {
       const next = rootEl.dataset.theme === "light" ? "dark" : "light";
@@ -74,52 +75,26 @@
   });
   menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
 
-  /* ── hero: char-split kinetic headline ───────────────── */
-  if (useGSAP) {
-    const wrapChars = (text) =>
-      [...text].map((ch) => (ch === " " ? " " : `<span class="char">${ch}</span>`)).join("");
-    document.querySelectorAll(".hero__line > span").forEach((line) => {
-      line.style.transform = "none";
-      line.style.animation = "none";
-      let html = "";
-      line.childNodes.forEach((node) => {
-        if (node.nodeType === Node.TEXT_NODE) {
-          html += wrapChars(node.textContent);
-        } else if (node.nodeType === Node.ELEMENT_NODE) {
-          const el = node.cloneNode(false);
-          el.innerHTML = wrapChars(node.textContent);
-          html += el.outerHTML;
-        }
-      });
-      line.innerHTML = html;
-    });
-    gsap.from(".hero__title .char", {
-      yPercent: 120,
-      rotateX: -60,
-      opacity: 0,
-      duration: 0.9,
-      ease: "power4.out",
-      stagger: 0.022,
-      delay: 0.1,
-      clearProps: "transform,opacity",
-    });
-    gsap.from(".hero__badge, .hero__sub, .hero__cta, .hero__stats", {
-      y: 30, opacity: 0, duration: 1, ease: "power3.out", stagger: 0.1, delay: 0.5,
-    });
-  }
-
   /* ── scroll reveals ──────────────────────────────────── */
   const revealEls = document.querySelectorAll(".reveal");
+  const cascades = [".services", ".plans", ".quotes", ".steps"];
   if (useGSAP) {
-    // hero children are animated by the intro timeline above;
-    // grid children are animated as cascades below
-    const cascades = [".bento", ".process", ".quotes"];
+    // grid children are animated as group cascades below, not individually
     revealEls.forEach((el) => {
-      if (el.closest(".hero")) return;
-      if (cascades.some((sel) => el.matches(`${sel} > *`) || el.matches(sel))) return;
+      if (cascades.some((sel) => el.matches(`${sel} > *`))) return;
       gsap.from(el, {
-        y: 48, opacity: 0, duration: 1, ease: "power3.out", clearProps: "transform,opacity",
+        y: 36, opacity: 0, duration: 0.9, ease: "power3.out", clearProps: "transform,opacity",
         scrollTrigger: { trigger: el, start: "top 88%", once: true },
+      });
+    });
+    // service / plan / quote grids cascade as groups
+    cascades.forEach((sel) => {
+      const wrap = document.querySelector(sel);
+      if (!wrap) return;
+      gsap.from(wrap.children, {
+        y: 40, opacity: 0, duration: 0.8, ease: "power3.out", stagger: 0.07,
+        clearProps: "transform,opacity",
+        scrollTrigger: { trigger: wrap, start: "top 85%", once: true },
       });
     });
   } else if (reduceMotion || !("IntersectionObserver" in window)) {
@@ -139,139 +114,94 @@
     revealEls.forEach((el) => io.observe(el));
   }
 
-  /* ── scroll-driven scenes (GSAP only) ────────────────── */
-  if (useGSAP) {
-    // top progress bar
-    gsap.to(".progress-bar", {
-      scaleX: 1, ease: "none",
-      scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.4 },
-    });
+  /* ── hero terminal: provisioning sequence ────────────── */
+  const termBody = document.getElementById("termBody");
+  if (termBody) {
+    const CMD = "cloud deploy my-store.com";
+    const LINES = [
+      '<span class="t-dim">→ provisioning NVMe instance …</span> <span class="t-ok">done (11s)</span>',
+      '<span class="t-dim">→ TLS certificate issued …</span> <span class="t-ok">done</span>',
+      '<span class="t-dim">→ replicating to 210 edge locations …</span> <span class="t-ok">done</span>',
+      '<span class="t-ok">✓ live in 38s</span> <span class="t-dim">— your visitors never waited</span>',
+    ];
+    const renderAll = () => {
+      termBody.innerHTML =
+        `<p><span class="t-prompt">$</span> ${CMD}</p>` +
+        LINES.map((l) => `<p>${l}</p>`).join("") +
+        '<p><span class="t-prompt">$</span> <span class="t-cursor">▊</span></p>';
+    };
+    if (reduceMotion) {
+      renderAll();
+    } else {
+      const cmdLine = document.createElement("p");
+      const typed = document.createElement("span");
+      const cursor = '<span class="t-cursor">▊</span>';
+      let started = false;
 
-    // aurora orbs drift with scroll (depth parallax)
-    gsap.to(".aurora__orb--1", { yPercent: 28, ease: "none",
-      scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 1.2 } });
-    gsap.to(".aurora__orb--2", { yPercent: -22, ease: "none",
-      scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 1.6 } });
+      const printLines = (i) => {
+        if (i >= LINES.length) {
+          const done = document.createElement("p");
+          done.innerHTML = `<span class="t-prompt">$</span> ${cursor}`;
+          termBody.appendChild(done);
+          return;
+        }
+        const line = document.createElement("p");
+        line.innerHTML = LINES[i];
+        termBody.appendChild(line);
+        setTimeout(() => printLines(i + 1), 550);
+      };
 
-    // case study visuals float against their text columns
-    document.querySelectorAll(".case__visual").forEach((vis) => {
-      gsap.fromTo(vis, { y: 56 }, {
-        y: -56, ease: "none",
-        scrollTrigger: { trigger: vis.closest(".case"), start: "top bottom", end: "bottom top", scrub: 1 },
-      });
-    });
+      const typeCmd = (i) => {
+        typed.textContent = CMD.slice(0, i);
+        cmdLine.innerHTML = `<span class="t-prompt">$</span> ${typed.textContent}${i < CMD.length ? cursor : ""}`;
+        if (i < CMD.length) setTimeout(() => typeCmd(i + 1), 34 + Math.random() * 40);
+        else setTimeout(() => printLines(0), 420);
+      };
 
-    // case numbers slide in
-    document.querySelectorAll(".case__num").forEach((num) => {
-      gsap.from(num, {
-        x: -40, opacity: 0, duration: 0.8, ease: "power3.out",
-        scrollTrigger: { trigger: num, start: "top 90%", once: true },
-      });
-    });
+      const start = () => {
+        if (started) return;
+        started = true;
+        termBody.innerHTML = "";
+        termBody.appendChild(cmdLine);
+        typeCmd(0);
+      };
 
-    // marquee reacts to scroll velocity
-    const track = document.querySelector(".marquee__track");
-    if (track) {
-      const skew = gsap.quickTo(track, "skewX", { duration: 0.4, ease: "power2.out" });
-      ScrollTrigger.create({
-        trigger: document.body, start: "top top", end: "bottom bottom",
-        onUpdate: (self) => skew(gsap.utils.clamp(-10, 10, self.getVelocity() / 280)),
-      });
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(([entry], obs) => {
+          if (entry.isIntersecting) { start(); obs.disconnect(); }
+        }, { threshold: 0.4 }).observe(termBody);
+      } else {
+        setTimeout(start, 600);
+      }
     }
-
-    // bento / process / quote cards cascade in as groups
-    [".bento", ".process", ".quotes"].forEach((sel) => {
-      const wrap = document.querySelector(sel);
-      if (!wrap) return;
-      gsap.from(wrap.children, {
-        y: 56, opacity: 0, duration: 0.9, ease: "power3.out", stagger: 0.09,
-        clearProps: "transform,opacity",
-        scrollTrigger: { trigger: wrap, start: "top 85%", once: true },
-      });
-    });
-
-    // CTA card zooms gently into place
-    gsap.from(".cta__card", {
-      scale: 0.92, opacity: 0, duration: 1.1, ease: "power3.out", clearProps: "transform,opacity",
-      scrollTrigger: { trigger: ".cta", start: "top 75%", once: true },
-    });
-
-    // section titles get a soft clip-wipe
-    document.querySelectorAll(".section__title").forEach((title) => {
-      gsap.from(title, {
-        clipPath: "inset(0 0 100% 0)", y: 24, duration: 1, ease: "power3.out",
-        clearProps: "clipPath,transform",
-        scrollTrigger: { trigger: title, start: "top 88%", once: true },
-      });
-    });
   }
 
-  /* ── hero constellation canvas ───────────────────────── */
-  const canvas = document.querySelector(".constellation");
-  if (canvas && !reduceMotion) {
-    const ctx = canvas.getContext("2d");
-    let w, h, points = [];
-    const mouse = { x: -9999, y: -9999 };
-    const DENSITY = 1 / 16000, LINK = 130, SPEED = 0.22;
+  /* ── uptime ledger: one tick per day, last 90 days ───── */
+  const ledgerTicks = document.getElementById("ledgerTicks");
+  if (ledgerTicks) {
+    const DAYS = 90;
+    const WARN_DAY = 68; // June 23 — the honest amber bar; keep within the last 30 so it stays visible on mobile
+    for (let i = 0; i < DAYS; i++) {
+      const tick = document.createElement("i");
+      tick.className = "ledger__tick" + (i === WARN_DAY ? " ledger__tick--warn" : "");
+      tick.style.transitionDelay = `${i * 9}ms`;
+      ledgerTicks.appendChild(tick);
+    }
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      ledgerTicks.classList.add("is-on");
+    } else {
+      new IntersectionObserver(([entry], obs) => {
+        if (entry.isIntersecting) { ledgerTicks.classList.add("is-on"); obs.disconnect(); }
+      }, { threshold: 0.5 }).observe(ledgerTicks);
+    }
+  }
 
-    const resize = () => {
-      const rect = canvas.parentElement.getBoundingClientRect();
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = rect.width; h = rect.height;
-      canvas.width = w * dpr; canvas.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const target = Math.min(90, Math.round(w * h * DENSITY));
-      points = Array.from({ length: target }, () => ({
-        x: Math.random() * w, y: Math.random() * h,
-        vx: (Math.random() - 0.5) * SPEED, vy: (Math.random() - 0.5) * SPEED,
-        r: Math.random() * 1.4 + 0.6,
-      }));
-    };
-    resize();
-    window.addEventListener("resize", resize, { passive: true });
-    canvas.parentElement.addEventListener("mousemove", (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left; mouse.y = e.clientY - rect.top;
-    }, { passive: true });
-    canvas.parentElement.addEventListener("mouseleave", () => { mouse.x = -9999; mouse.y = -9999; });
-
-    let visible = true;
-    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }).observe(canvas);
-
-    const tick = () => {
-      requestAnimationFrame(tick);
-      if (!visible) return;
-      ctx.clearRect(0, 0, w, h);
-      for (const p of points) {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > w) p.vx *= -1;
-        if (p.y < 0 || p.y > h) p.vy *= -1;
-        // gentle pull toward the cursor
-        const dxm = mouse.x - p.x, dym = mouse.y - p.y;
-        if (Math.hypot(dxm, dym) < 180) { p.x += dxm * 0.0035; p.y += dym * 0.0035; }
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = rootEl.dataset.theme === "light"
-          ? "rgba(86, 96, 220, 0.5)" : "rgba(160, 170, 255, 0.55)";
-        ctx.fill();
-      }
-      for (let i = 0; i < points.length; i++) {
-        for (let j = i + 1; j < points.length; j++) {
-          const a = points[i], b = points[j];
-          const d = Math.hypot(a.x - b.x, a.y - b.y);
-          if (d < LINK) {
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = rootEl.dataset.theme === "light"
-              ? `rgba(86, 96, 220, ${(1 - d / LINK) * 0.14})`
-              : `rgba(122, 124, 255, ${(1 - d / LINK) * 0.16})`;
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        }
-      }
-    };
-    tick();
+  /* ── live latency ticker ─────────────────────────────── */
+  const mLatency = document.getElementById("mLatency");
+  if (mLatency) {
+    const set = () => { mLatency.innerHTML = `${19 + Math.floor(Math.random() * 7)}<i>ms</i>`; };
+    set();
+    if (!reduceMotion) setInterval(set, 2200);
   }
 
   /* ── animated counters ───────────────────────────────── */
@@ -280,8 +210,9 @@
     const target = parseFloat(el.dataset.count);
     const prefix = el.dataset.prefix || "";
     const suffix = el.dataset.suffix || "";
+    const fmt = (n) => n.toLocaleString("en-US");
     if (reduceMotion) {
-      el.textContent = prefix + target + suffix;
+      el.textContent = prefix + fmt(target) + suffix;
       return;
     }
     const dur = 1400;
@@ -289,7 +220,7 @@
     const tickC = (t) => {
       const p = Math.min((t - t0) / dur, 1);
       const eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = prefix + Math.round(target * eased) + suffix;
+      el.textContent = prefix + fmt(Math.round(target * eased)) + suffix;
       if (p < 1) requestAnimationFrame(tickC);
     };
     requestAnimationFrame(tickC);
@@ -311,65 +242,24 @@
     counters.forEach(runCounter);
   }
 
-  /* ── custom cursor ───────────────────────────────────── */
-  if (finePointer && !reduceMotion) {
-    const dot = document.querySelector(".cursor__dot");
-    const ring = document.querySelector(".cursor__ring");
-    let mx = -100, my = -100, rx = -100, ry = -100;
-    window.addEventListener("mousemove", (e) => { mx = e.clientX; my = e.clientY; }, { passive: true });
-    const loop = () => {
-      rx += (mx - rx) * 0.16;
-      ry += (my - ry) * 0.16;
-      dot.style.transform = `translate(${mx}px, ${my}px)`;
-      ring.style.transform = `translate(${rx}px, ${ry}px)`;
-      requestAnimationFrame(loop);
-    };
-    loop();
-    document.querySelectorAll("a, button, summary, .bento__card").forEach((el) => {
-      el.addEventListener("mouseenter", () => document.body.classList.add("cursor-hover"));
-      el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-hover"));
-    });
-  }
-
-  /* ── 3D tilt on cards / visuals ──────────────────────── */
-  if (finePointer && !reduceMotion) {
-    document.querySelectorAll("[data-tilt]").forEach((card) => {
-      const strength = 5;
-      card.addEventListener("mousemove", (e) => {
-        const r = card.getBoundingClientRect();
-        const px = (e.clientX - r.left) / r.width - 0.5;
-        const py = (e.clientY - r.top) / r.height - 0.5;
-        card.style.setProperty("--tiltX", `${(-py * strength).toFixed(2)}deg`);
-        card.style.setProperty("--tiltY", `${(px * strength).toFixed(2)}deg`);
-        card.classList.add("is-tilting");
-        card.style.setProperty("--mx", `${e.clientX - r.left}px`);
-        card.style.setProperty("--my", `${e.clientY - r.top}px`);
+  /* ── billing period toggle ───────────────────────────── */
+  const billingOpts = document.querySelectorAll(".billing__opt");
+  billingOpts.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const period = btn.dataset.billing;
+      billingOpts.forEach((b) => {
+        const active = b === btn;
+        b.classList.toggle("is-active", active);
+        b.setAttribute("aria-pressed", String(active));
       });
-      card.addEventListener("mouseleave", () => card.classList.remove("is-tilting"));
-    });
-  } else {
-    // still feed the spotlight position for hover-capable coarse pointers
-    document.querySelectorAll(".bento__card").forEach((card) => {
-      card.addEventListener("pointermove", (e) => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty("--mx", `${e.clientX - r.left}px`);
-        card.style.setProperty("--my", `${e.clientY - r.top}px`);
+      document.querySelectorAll(".plan__num").forEach((num) => {
+        num.textContent = num.dataset[period];
       });
-    });
-  }
-
-  /* ── magnetic buttons ────────────────────────────────── */
-  if (finePointer && !reduceMotion) {
-    document.querySelectorAll("[data-magnetic]").forEach((el) => {
-      el.addEventListener("mousemove", (e) => {
-        const r = el.getBoundingClientRect();
-        const x = (e.clientX - r.left - r.width / 2) * 0.22;
-        const y = (e.clientY - r.top - r.height / 2) * 0.22;
-        el.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
+      document.querySelectorAll(".plan__was").forEach((was) => {
+        was.textContent = was.dataset[period === "yearly" ? "wasYearly" : "wasMonthly"];
       });
-      el.addEventListener("mouseleave", () => { el.style.transform = ""; });
-    });
-  }
+    })
+  );
 
   /* ── single-open FAQ accordion ───────────────────────── */
   const faqItems = document.querySelectorAll(".faq__item");

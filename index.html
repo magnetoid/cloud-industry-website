@@ -3,55 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cloud Industry — AI App Development Agency. We build AI products that ship.</title>
-  <meta name="description" content="Cloud Industry is an AI app development agency. We design, build and launch production-grade AI products — LLM apps, AI agents, custom AI e-commerce. Creators of ClearCount.ai, WooPulse, Alethia and Morpheus OS." />
-  <meta property="og:title" content="Cloud Industry — AI App Development Agency" />
-  <meta property="og:description" content="We design, build and launch AI products people actually use. From idea to production in weeks, not quarters." />
+  <title>Cloud Industry — Cloud Hosting That Never Blinks. 99.99% Uptime, Free Migration.</title>
+  <meta name="description" content="Cloud Industry is a high-performance cloud hosting platform: NVMe web hosting, cloud VPS, dedicated servers, managed WordPress, CDN, domains, security and 24/7 engineer support. Free zero-downtime migration, 30-day money-back guarantee." />
+  <meta property="og:title" content="Cloud Industry — Cloud Hosting That Never Blinks" />
+  <meta property="og:description" content="NVMe hosting with a 99.99% uptime SLA, sub-second load times worldwide, and engineers who answer in minutes. We move you in for free." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=switzer@400,500,600&display=swap" rel="stylesheet" />
   <script>
     /* set theme before first paint to avoid a flash */
     document.documentElement.dataset.theme =
       localStorage.getItem("theme") ||
-      (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
   </script>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>☁️</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232547F4'/><text x='50' y='71' font-size='58' text-anchor='middle' fill='white' font-family='monospace'>▲</text></svg>" />
 </head>
-<body>
-
-  <!-- ambient background -->
-  <div class="aurora" aria-hidden="true">
-    <div class="aurora__orb aurora__orb--1"></div>
-    <div class="aurora__orb aurora__orb--2"></div>
-    <div class="aurora__orb aurora__orb--3"></div>
-  </div>
-  <div class="grain" aria-hidden="true"></div>
-
-  <!-- custom cursor (desktop only) -->
-  <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"></div></div>
-
-  <!-- scroll progress -->
-  <div class="progress-bar" aria-hidden="true"></div>
+<body data-cms-page="home">
 
   <!-- ══════════ NAV ══════════ -->
   <header class="nav" id="top">
     <div class="nav__inner">
-      <a href="#top" class="nav__logo" data-magnetic>
-        <span class="nav__logo-mark">◆</span> cloud<span class="nav__logo-accent">industry</span>
+      <a href="#top" class="nav__logo">
+        <span class="nav__logo-mark">▲</span> cloud<span class="nav__logo-accent">industry</span>
       </a>
       <nav class="nav__links" aria-label="Primary">
-        <a href="#work">Work</a>
         <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#migration">Migration</a>
+        <a href="tetra.html">Tetra Host</a>
+        <a href="#support">Support</a>
         <a href="#faq">FAQ</a>
       </nav>
+      <a class="status-pill" href="#support" title="Live platform status">
+        <span class="status-pill__dot" aria-hidden="true"></span> All systems operational
+      </a>
       <button class="theme-toggle" aria-label="Switch color theme" title="Switch theme">☾</button>
-      <a href="#contact" class="btn btn--small" data-magnetic>Start a project <span class="btn__arrow">→</span></a>
+      <a href="#pricing" class="btn btn--small">Get started <span class="btn__arrow">→</span></a>
       <button class="nav__burger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span>
       </button>
@@ -60,313 +50,280 @@
 
   <div class="mobile-menu" aria-hidden="true">
     <button class="theme-toggle" aria-label="Switch color theme" title="Switch theme">☾</button>
-    <a href="#work">Work</a>
     <a href="#services">Services</a>
-    <a href="#process">Process</a>
-    <a href="#about">About</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#migration">Migration</a>
+    <a href="tetra.html">Tetra Host</a>
+    <a href="#support">Support</a>
     <a href="#faq">FAQ</a>
-    <a href="#contact" class="btn">Start a project →</a>
+    <a href="#pricing" class="btn">Get started →</a>
   </div>
 
   <main>
 
     <!-- ══════════ HERO ══════════ -->
     <section class="hero">
-      <canvas class="constellation" aria-hidden="true"></canvas>
-      <div class="container">
-        <div class="hero__badge reveal">
-          <span class="pulse-dot"></span> AI Product Studio · Now accepting Q3 2026 projects
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="hero__eyebrow reveal">
+            <span class="status-pill__dot" aria-hidden="true"></span>
+            <span data-cms="hero.eyebrow">uptime 99.99% · last 90 days</span>
+          </p>
+          <h1 class="hero__title" data-cms="hero.title" data-cms-html>
+            The last host<br />you'll ever<br /><em>migrate to.</em>
+          </h1>
+          <p class="hero__sub reveal" data-cms="hero.sub" data-cms-html>
+            Every second your site loads slowly, someone leaves — and buys from a
+            competitor. Cloud Industry runs your site on NVMe cloud infrastructure
+            with a <strong>99.99% uptime SLA</strong>, global edge caching, and
+            engineers who answer in minutes. We move you in <strong>free, in under
+            24 hours, with zero downtime.</strong>
+          </p>
+          <div class="hero__cta reveal">
+            <a href="#pricing" class="btn btn--primary">Launch your site <span class="btn__arrow">→</span></a>
+            <a href="#migration" class="btn btn--ghost">Get free migration</a>
+          </div>
+          <p class="hero__assure reveal" data-cms="hero.assure" data-cms-html>
+            30-day money-back guarantee &nbsp;·&nbsp; No setup fees &nbsp;·&nbsp; Cancel anytime
+          </p>
         </div>
-        <h1 class="hero__title">
-          <span class="hero__line"><span>We build</span></span>
-          <span class="hero__line"><span><em class="serif">AI&nbsp;products</em></span></span>
-          <span class="hero__line"><span>people actually <em class="serif glow">use.</em></span></span>
-        </h1>
-        <p class="hero__sub reveal">
-          Cloud Industry is an AI app development agency. We take your idea from a
-          napkin sketch to a production-grade product — LLM apps, AI agents and
-          custom AI commerce — shipped in <strong>weeks, not quarters</strong>.
+
+        <!-- signature: live provisioning terminal -->
+        <div class="hero__panel reveal" aria-label="Live provisioning demo">
+          <div class="term">
+            <div class="term__bar">
+              <i></i><i></i><i></i>
+              <span>cloudindustry — deploy</span>
+              <b class="term__live"><span class="status-pill__dot"></span> live</b>
+            </div>
+            <div class="term__body" id="termBody" aria-live="off">
+              <p class="term__seed"><span class="t-prompt">$</span> cloud deploy my-store.com<span class="t-cursor">▊</span></p>
+            </div>
+            <div class="term__metrics">
+              <div class="term__metric"><b id="mLatency">—</b><small>ttfb, global avg</small></div>
+              <div class="term__metric"><b>99.99<i>%</i></b><small>uptime SLA</small></div>
+              <div class="term__metric"><b id="mEdge">210</b><small>edge locations</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ PROOF: UPTIME LEDGER ══════════ -->
+    <section class="proof" aria-label="Platform statistics">
+      <div class="container">
+        <div class="ledger reveal">
+          <div class="ledger__head">
+            <span class="ledger__label">uptime — one bar per day, <span class="ledger__d90">last 90 days</span><span class="ledger__d30">last 30 days</span></span>
+            <b class="ledger__value">99.99%</b>
+          </div>
+          <div class="ledger__ticks" id="ledgerTicks" aria-hidden="true"></div>
+          <p class="ledger__note">
+            The amber bar? June 23 — four minutes of degraded performance, self-healed,
+            every affected customer credited automatically. We show it because trust
+            is built on the days that don't go perfectly.
+          </p>
+        </div>
+        <div class="proof__grid reveal">
+          <div class="proof__item"><b><span data-count="12400" data-suffix="+">0</span></b><small>sites hosted &amp; growing daily</small></div>
+          <div class="proof__item"><b><span data-count="22" data-suffix="ms">0</span></b><small>avg. time-to-first-byte</small></div>
+          <div class="proof__item"><b><span data-count="4" data-suffix=".9/5">0</span></b><small>support rating from 3,000+ reviews</small></div>
+          <div class="proof__item"><b><span data-count="0" data-prefix="$">0</span></b><small>cost to switch — migration is on us</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ SERVICES ══════════ -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Services</span>
+          <h2 class="section__title">Everything your site needs.<br /><em>Nothing it doesn't.</em></h2>
+          <p class="section__sub">One platform, one invoice, one team that answers for all of it. No juggling five vendors when something breaks at 3 a.m.</p>
+        </div>
+
+        <div class="services">
+          <article class="svc reveal">
+            <span class="svc__id">srv/web</span>
+            <h3>Web Hosting</h3>
+            <p>NVMe-powered shared hosting that outruns most competitors' VPS plans. Free SSL, one-click installs, instant setup.</p>
+            <ul class="svc__spec"><li>NVMe SSD storage</li><li>LiteSpeed + HTTP/3</li><li>Free SSL &amp; email</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">srv/vps</span>
+            <h3>Cloud VPS</h3>
+            <p>Dedicated resources that scale in seconds, not support tickets. Resize live — your traffic spike is not an outage.</p>
+            <ul class="svc__spec"><li>Deploy in &lt;60s</li><li>Hourly billing</li><li>Snapshots included</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">srv/metal</span>
+            <h3>Dedicated Servers</h3>
+            <p>Bare metal for workloads that share with no one. Latest-gen CPUs, unmetered private networking, IPMI access.</p>
+            <ul class="svc__spec"><li>Single-tenant hardware</li><li>Custom configs</li><li>Same-day provisioning</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">srv/wp</span>
+            <h3>Managed WordPress</h3>
+            <p>WordPress that stays fast, patched and online — without you thinking about it. Staging, auto-updates, malware watch.</p>
+            <ul class="svc__spec"><li>1-click staging</li><li>Auto core updates</li><li>Object cache built in</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">srv/dns</span>
+            <h3>Domains &amp; DNS</h3>
+            <p>Register, transfer, and manage domains with anycast DNS that resolves in milliseconds anywhere on Earth.</p>
+            <ul class="svc__spec"><li>Free WHOIS privacy</li><li>Anycast DNS</li><li>At-cost renewals</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">srv/edge</span>
+            <h3>CDN &amp; Edge</h3>
+            <p>Your content cached in 210 cities, so a visitor in Tokyo loads as fast as one next door to the server.</p>
+            <ul class="svc__spec"><li>210 edge locations</li><li>Smart image optimization</li><li>Zero-config setup</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">srv/sec</span>
+            <h3>Security &amp; DDoS</h3>
+            <p>Enterprise-grade protection on every plan — not sold back to you as an add-on. WAF, DDoS mitigation, malware scanning.</p>
+            <ul class="svc__spec"><li>Always-on DDoS shield</li><li>Web application firewall</li><li>Free SSL, forever</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">srv/store</span>
+            <h3>Storage &amp; Backups</h3>
+            <p>S3-compatible object storage and automatic daily backups with one-click restore. The undo button your business deserves.</p>
+            <ul class="svc__spec"><li>Daily auto-backups</li><li>30-day retention</li><li>One-click restore</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ MIGRATION ══════════ -->
+    <section class="section section--alt" id="migration">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Switching</span>
+          <h2 class="section__title">Moving hosts feels risky.<br /><em>So we removed the risk.</em></h2>
+          <p class="section__sub">The only reason people stay with a host they hate is the fear of migrating. Here's how we make that fear irrational:</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <span class="step__num">step 1</span>
+            <h3>Tell us where you are</h3>
+            <p>Share your current hosting login — or just a backup file. That's the entire extent of your work. Seriously, that's it.</p>
+          </div>
+          <div class="step reveal">
+            <span class="step__num">step 2</span>
+            <h3>We move everything, free</h3>
+            <p>Our migration engineers copy your sites, databases, email and DNS within 24 hours. You pay nothing, whatever the size.</p>
+          </div>
+          <div class="step reveal">
+            <span class="step__num">step 3</span>
+            <h3>You switch when you're sure</h3>
+            <p>Your old host stays live until you've tested everything and flip DNS yourself. Zero downtime. Zero leap of faith.</p>
+          </div>
+        </div>
+        <p class="steps__note reveal">Most migrations complete the same day. Your visitors never notice — except that the site got faster.</p>
+      </div>
+    </section>
+
+    <!-- ══════════ PRICING ══════════ -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Pricing</span>
+          <h2 class="section__title">Honest pricing.<br /><em>Every feature that matters, on every plan.</em></h2>
+          <p class="section__sub">SSL, backups, DDoS protection and real support are included everywhere — we don't hold your security hostage for an upsell.</p>
+        </div>
+
+        <div class="billing reveal" role="group" aria-label="Billing period">
+          <button class="billing__opt" data-billing="monthly" aria-pressed="false">Monthly</button>
+          <button class="billing__opt is-active" data-billing="yearly" aria-pressed="true">Yearly <em>save 40%</em></button>
+        </div>
+
+        <div class="plans">
+          <article class="plan reveal">
+            <h3 class="plan__name">Launch</h3>
+            <p class="plan__for">For a first site or portfolio</p>
+            <p class="plan__price">
+              <span class="plan__was" data-was-monthly="$5.99" data-was-yearly="$5.99">$5.99</span>
+              <b><span class="plan__num" data-monthly="4.49" data-yearly="2.99">2.99</span></b><span class="plan__per">/mo</span>
+            </p>
+            <a href="#contact" class="btn btn--ghost btn--full">Choose Launch</a>
+            <ul class="plan__feat">
+              <li>1 website</li>
+              <li>25 GB NVMe storage</li>
+              <li>Free SSL &amp; daily backups</li>
+              <li>Free domain, first year</li>
+              <li>24/7 support</li>
+            </ul>
+          </article>
+
+          <article class="plan plan--hot reveal">
+            <span class="plan__badge">Most popular — 7 in 10 choose this</span>
+            <h3 class="plan__name">Grow</h3>
+            <p class="plan__for">For businesses that can't afford downtime</p>
+            <p class="plan__price">
+              <span class="plan__was" data-was-monthly="$13.99" data-was-yearly="$13.99">$13.99</span>
+              <b><span class="plan__num" data-monthly="9.99" data-yearly="6.99">6.99</span></b><span class="plan__per">/mo</span>
+            </p>
+            <a href="#contact" class="btn btn--primary btn--full">Choose Grow</a>
+            <ul class="plan__feat">
+              <li><b>Unlimited</b> websites</li>
+              <li>150 GB NVMe storage</li>
+              <li>Global CDN included</li>
+              <li>Free migration of all sites</li>
+              <li>Staging environments</li>
+              <li>Priority 24/7 support</li>
+            </ul>
+          </article>
+
+          <article class="plan reveal">
+            <h3 class="plan__name">Scale</h3>
+            <p class="plan__for">For high-traffic &amp; e-commerce</p>
+            <p class="plan__price">
+              <span class="plan__was" data-was-monthly="$27.99" data-was-yearly="$27.99">$27.99</span>
+              <b><span class="plan__num" data-monthly="19.99" data-yearly="13.99">13.99</span></b><span class="plan__per">/mo</span>
+            </p>
+            <a href="#contact" class="btn btn--ghost btn--full">Choose Scale</a>
+            <ul class="plan__feat">
+              <li>Everything in Grow</li>
+              <li>Dedicated resources</li>
+              <li>400 GB NVMe storage</li>
+              <li>Object cache &amp; Redis</li>
+              <li>Dedicated account engineer</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="plans__note reveal">
+          Prices shown are introductory placeholder rates. Every plan includes the
+          <strong>30-day money-back guarantee</strong> — if we're not the fastest host
+          you've used, you get every cent back. No questions, no retention scripts.
         </p>
-        <div class="hero__cta reveal">
-          <a href="#contact" class="btn btn--primary" data-magnetic>Start a project <span class="btn__arrow">→</span></a>
-          <a href="#work" class="btn btn--ghost" data-magnetic>See our work</a>
-        </div>
-        <div class="hero__stats reveal">
-          <div class="hero__stat"><span class="hero__stat-num" data-count="4">0</span><span class="hero__stat-label">AI products shipped &amp; live</span></div>
-          <div class="hero__stat"><span class="hero__stat-num" data-count="100" data-suffix="%">0</span><span class="hero__stat-label">designed &amp; engineered in-house</span></div>
-          <div class="hero__stat"><span class="hero__stat-num" data-count="6" data-prefix="~">0</span><span class="hero__stat-label">weeks from kickoff to MVP</span></div>
-          <div class="hero__stat"><span class="hero__stat-num" data-count="24" data-suffix="h">0</span><span class="hero__stat-label">response time, every time</span></div>
-        </div>
-      </div>
-      <div class="hero__scroll" aria-hidden="true"><span></span></div>
-    </section>
-
-    <!-- ══════════ MARQUEE ══════════ -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>LLM Applications</span><i>✦</i><span>AI Agents</span><i>✦</i><span>RAG Pipelines</span><i>✦</i><span>Custom AI E-commerce</span><i>✦</i><span>Computer Vision</span><i>✦</i><span>SaaS Platforms</span><i>✦</i><span>Product Design</span><i>✦</i><span>MVP Sprints</span><i>✦</i>
-        <span>LLM Applications</span><i>✦</i><span>AI Agents</span><i>✦</i><span>RAG Pipelines</span><i>✦</i><span>Custom AI E-commerce</span><i>✦</i><span>Computer Vision</span><i>✦</i><span>SaaS Platforms</span><i>✦</i><span>Product Design</span><i>✦</i><span>MVP Sprints</span><i>✦</i>
-      </div>
-    </div>
-
-    <!-- ══════════ WORK ══════════ -->
-    <section class="section" id="work">
-      <div class="container">
-        <div class="section__head reveal">
-          <span class="section__eyebrow">01 — Selected work</span>
-          <h2 class="section__title">Products we've <em class="serif">shipped</em>, not slides we've shown.</h2>
-          <p class="section__sub">Every product below is real, live and built end-to-end by Cloud Industry — strategy, design, engineering, launch.</p>
-        </div>
-
-        <!-- ClearCount.ai -->
-        <article class="case reveal">
-          <div class="case__visual case__visual--clearcount" data-tilt>
-            <div class="mockup">
-              <div class="mockup__bar"><i></i><i></i><i></i><span>clearcount.ai</span></div>
-              <div class="mockup__body">
-                <div class="mockup__kpis">
-                  <div class="mockup__kpi"><b>12,408</b><small>items counted</small></div>
-                  <div class="mockup__kpi mockup__kpi--good"><b>99.2%</b><small>match rate</small></div>
-                  <div class="mockup__kpi"><b>3 min</b><small>audit time</small></div>
-                </div>
-                <div class="mockup__chart">
-                  <i style="--h:34%"></i><i style="--h:52%"></i><i style="--h:41%"></i><i style="--h:68%"></i><i style="--h:57%"></i><i style="--h:80%"></i><i style="--h:72%"></i><i style="--h:92%"></i>
-                </div>
-                <div class="mockup__row"><span class="mockup__check">✓</span> Reconciliation complete — 2 discrepancies flagged</div>
-              </div>
-            </div>
-          </div>
-          <div class="case__info">
-            <span class="case__num">/ 01</span>
-            <h3 class="case__title">ClearCount<span class="accent">.ai</span></h3>
-            <p class="case__tag">AI Counting &amp; Reconciliation Platform</p>
-            <p class="case__desc">
-              Counting inventory by hand is slow, error-prone and soul-crushing.
-              ClearCount turns it into a three-minute job: AI-assisted counts,
-              automated reconciliation against your records, and instant audit
-              trails with every discrepancy flagged and explained.
-            </p>
-            <ul class="case__metrics">
-              <li><b>Hours → minutes</b> per audit cycle</li>
-              <li><b>Every discrepancy</b> flagged, explained, traceable</li>
-              <li><b>Zero spreadsheets</b> — one source of truth</li>
-            </ul>
-            <div class="case__chips"><span>AI / ML</span><span>Data Reconciliation</span><span>SaaS Dashboard</span></div>
-          </div>
-        </article>
-
-        <!-- WooPulse -->
-        <article class="case case--flip reveal">
-          <div class="case__visual case__visual--woopulse" data-tilt>
-            <div class="mockup">
-              <div class="mockup__bar"><i></i><i></i><i></i><span>woopulse — orders</span></div>
-              <div class="mockup__body">
-                <div class="mockup__orders">
-                  <div class="mockup__order"><span class="dot dot--new"></span><b>#4821</b><em>2× Hoodie, 1× Cap</em><span class="pill pill--new">new</span></div>
-                  <div class="mockup__order"><span class="dot dot--proc"></span><b>#4820</b><em>1× Sneakers 42</em><span class="pill pill--proc">processing</span></div>
-                  <div class="mockup__order"><span class="dot dot--done"></span><b>#4819</b><em>3× Tee, gift wrap</em><span class="pill pill--done">shipped</span></div>
-                  <div class="mockup__order"><span class="dot dot--done"></span><b>#4818</b><em>1× Backpack</em><span class="pill pill--done">shipped</span></div>
-                </div>
-                <div class="mockup__row mockup__row--speed">⚡ 38 orders processed today · 2.1× faster than wp-admin</div>
-              </div>
-            </div>
-          </div>
-          <div class="case__info">
-            <span class="case__num">/ 02</span>
-            <h3 class="case__title">WooPulse</h3>
-            <p class="case__tag">Order Management for WooCommerce, Reimagined</p>
-            <p class="case__desc">
-              The WordPress order screen hasn't changed in a decade. WooPulse
-              replaces it with a fast, focused dashboard: update statuses in one
-              click, see what matters at a glance, and invite your team or
-              fulfilment partners — without ever handing them your wp-admin keys.
-            </p>
-            <ul class="case__metrics">
-              <li><b>2× faster</b> daily order processing — guaranteed</li>
-              <li><b>Granular roles</b> — collaborators see only their orders</li>
-              <li><b>Real-time sync</b> with WooCommerce, zero migration</li>
-            </ul>
-            <div class="case__chips"><span>E-commerce</span><span>WooCommerce</span><span>Team Workflows</span></div>
-          </div>
-        </article>
-
-        <!-- Alethia -->
-        <article class="case reveal">
-          <div class="case__visual case__visual--alethia" data-tilt>
-            <div class="mockup mockup--chat">
-              <div class="mockup__bar"><i></i><i></i><i></i><span>alethia.me</span></div>
-              <div class="mockup__body">
-                <div class="mockup__msg mockup__msg--ai">What would change if your assumption turned out to be wrong?</div>
-                <div class="mockup__msg mockup__msg--user">…I'd have to rethink the whole launch plan.</div>
-                <div class="mockup__msg mockup__msg--ai">Then that's the assumption worth testing first. Want to map it?</div>
-                <div class="mockup__graph">
-                  <span class="node n1"></span><span class="node n2"></span><span class="node n3"></span><span class="node n4"></span><span class="node n5"></span>
-                  <svg viewBox="0 0 200 80" preserveAspectRatio="none"><path d="M20 20 L80 55 L150 25 L180 60 M80 55 L120 70" /></svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="case__info">
-            <span class="case__num">/ 03</span>
-            <h3 class="case__title">Alethia<span class="accent">.me</span></h3>
-            <p class="case__tag">An AI That Helps You Think — Not Just Answer</p>
-            <p class="case__desc">
-              Most chatbots hand you answers. Alethia asks better questions.
-              It's a personal thinking companion that challenges your assumptions,
-              connects ideas across conversations into a living thought map, and
-              keeps everything encrypted and yours — your data never trains anyone's model.
-            </p>
-            <ul class="case__metrics">
-              <li><b>Socratic engine</b> — questions that sharpen your thinking</li>
-              <li><b>Thought graph</b> — ideas linked across every session</li>
-              <li><b>Private by design</b> — end-to-end encrypted, never trained on</li>
-            </ul>
-            <div class="case__chips"><span>LLM App</span><span>Knowledge Graph</span><span>Privacy-first</span></div>
-          </div>
-        </article>
-
-        <!-- Morpheus OS -->
-        <article class="case case--flip reveal">
-          <div class="case__visual case__visual--morpheus" data-tilt>
-            <div class="mockup">
-              <div class="mockup__bar"><i></i><i></i><i></i><span>morpheus os — command center</span></div>
-              <div class="mockup__body">
-                <div class="mockup__terminal">
-                  <p><span class="t-prompt">morpheus»</span> agent:merchandiser repricing 142 SKUs…</p>
-                  <p><span class="t-prompt">morpheus»</span> demand spike detected · <span class="t-ok">restock order drafted</span></p>
-                  <p><span class="t-prompt">morpheus»</span> homepage personalized for 8 segments</p>
-                  <p><span class="t-prompt">morpheus»</span> conversion +18% vs. last cycle <span class="t-cursor">▊</span></p>
-                </div>
-                <div class="mockup__kpis">
-                  <div class="mockup__kpi"><b>3 agents</b><small>working now</small></div>
-                  <div class="mockup__kpi mockup__kpi--good"><b>+18%</b><small>conversion</small></div>
-                  <div class="mockup__kpi"><b>0</b><small>manual tasks</small></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="case__info">
-            <span class="case__num">/ 04</span>
-            <h3 class="case__title">Morpheus <span class="accent">OS</span></h3>
-            <p class="case__tag">A Custom AI E-commerce Operating System</p>
-            <p class="case__desc">
-              What if your store ran itself? Morpheus OS is an AI-native commerce
-              platform built from scratch: autonomous merchandising agents,
-              per-visitor personalization, predictive inventory and dynamic
-              pricing — one system where AI isn't a plugin, it's the foundation.
-            </p>
-            <ul class="case__metrics">
-              <li><b>Agent-driven ops</b> — pricing, restocking, merchandising</li>
-              <li><b>1:1 personalization</b> — every visitor sees their store</li>
-              <li><b>Built to own</b> — your platform, your data, no rent</li>
-            </ul>
-            <div class="case__chips"><span>AI Agents</span><span>E-commerce Platform</span><span>Custom Build</span></div>
-          </div>
-        </article>
-
       </div>
     </section>
 
-    <!-- ══════════ SERVICES (bento) ══════════ -->
-    <section class="section section--alt" id="services">
-      <div class="container">
-        <div class="section__head reveal">
-          <span class="section__eyebrow">02 — What we do</span>
-          <h2 class="section__title">Everything an AI product needs to <em class="serif">exist.</em></h2>
-          <p class="section__sub">One team, end-to-end. No hand-offs between "the design agency" and "the dev shop" — we are both, plus the AI engineering most agencies fake.</p>
+    <!-- ══════════ SUPPORT ══════════ -->
+    <section class="section section--alt" id="support">
+      <div class="container support__grid">
+        <div class="support__copy reveal">
+          <span class="section__eyebrow">Support</span>
+          <h2 class="section__title">Talk to an engineer.<br /><em>Not a script.</em></h2>
+          <p class="section__sub">
+            Every support seat at Cloud Industry is held by someone who can actually
+            fix your problem — no tiers, no escalation maze, no "have you tried
+            clearing your cache." When your business is down, minutes are money,
+            and we act like it.
+          </p>
+          <ul class="support__channels">
+            <li><b>Live chat</b><span>24/7/365 · median first reply under 2 minutes</span></li>
+            <li><b>Tickets</b><span>full resolution, median 1.4 hours</span></li>
+            <li><b>Phone</b><span>on Grow &amp; Scale plans — a human picks up</span></li>
+          </ul>
         </div>
-
-        <div class="bento">
-          <div class="bento__card bento__card--xl reveal" data-tilt>
-            <div class="bento__icon">⚙️</div>
-            <h3>AI App Development</h3>
-            <p>Full-stack, production-grade applications with AI at the core — not bolted on. LLM integration, streaming UX, evals, guardrails, cost control. Web, mobile, desktop.</p>
-            <div class="bento__hover">
-              <span>GPT · Claude · open-weights</span><span>Streaming-first UX</span><span>Eval &amp; observability built in</span>
-            </div>
-          </div>
-          <div class="bento__card reveal" data-tilt>
-            <div class="bento__icon">🤖</div>
-            <h3>AI Agents &amp; Automation</h3>
-            <p>Agents that do real work: tool use, multi-step workflows, human-in-the-loop checkpoints. Like the autonomous merchandisers running inside Morpheus OS.</p>
-          </div>
-          <div class="bento__card reveal" data-tilt>
-            <div class="bento__icon">🛒</div>
-            <h3>AI E-commerce</h3>
-            <p>From WooCommerce power-ups (WooPulse) to fully custom AI-native platforms (Morpheus OS). Personalization, pricing, inventory intelligence.</p>
-          </div>
-          <div class="bento__card reveal" data-tilt>
-            <div class="bento__icon">📚</div>
-            <h3>RAG &amp; Knowledge Systems</h3>
-            <p>Your documents, your data, answering accurately. Hybrid search, citations, freshness pipelines — retrieval that doesn't hallucinate your reputation away.</p>
-          </div>
-          <div class="bento__card reveal" data-tilt>
-            <div class="bento__icon">🚀</div>
-            <h3>MVP in Weeks</h3>
-            <p>A focused product sprint: scope ruthlessly, design fast, ship a real product to real users in ~6 weeks. Then iterate on evidence, not opinions.</p>
-          </div>
-          <div class="bento__card bento__card--wide reveal" data-tilt>
-            <div class="bento__icon">🧭</div>
-            <h3>AI Strategy &amp; Feasibility Audit</h3>
-            <p>Not sure if AI fits your problem? We'll tell you the truth in one week — a prototype, an honest feasibility verdict, and a build-vs-skip recommendation. If AI is the wrong tool, we'll say so. That honesty is why clients come back.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════ PROCESS ══════════ -->
-    <section class="section" id="process">
-      <div class="container">
-        <div class="section__head reveal">
-          <span class="section__eyebrow">03 — How we work</span>
-          <h2 class="section__title">From idea to live product in <em class="serif">four moves.</em></h2>
-        </div>
-        <div class="process">
-          <div class="process__step reveal">
-            <span class="process__num">01</span>
-            <h3>Discover</h3>
-            <p>A one-week feasibility sprint. We interrogate the idea, prototype the riskiest AI assumption, and define the smallest product worth shipping.</p>
-            <span class="process__dur">week 1</span>
-          </div>
-          <div class="process__step reveal">
-            <span class="process__num">02</span>
-            <h3>Design</h3>
-            <p>Product design that respects AI's nature — streaming, uncertainty, latency. Clickable prototypes you can put in front of users before a line of backend exists.</p>
-            <span class="process__dur">weeks 1–2</span>
-          </div>
-          <div class="process__step reveal">
-            <span class="process__num">03</span>
-            <h3>Build</h3>
-            <p>Senior engineers, tight loops, a demo every Friday. You watch the product grow weekly — no six-week silences, no big-bang reveals.</p>
-            <span class="process__dur">weeks 2–6</span>
-          </div>
-          <div class="process__step reveal">
-            <span class="process__num">04</span>
-            <h3>Launch &amp; Grow</h3>
-            <p>We ship it, instrument it, and stay. Evals, cost optimization, model upgrades, feature iterations — AI products are gardens, not statues.</p>
-            <span class="process__dur">ongoing</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════ ABOUT / MANIFESTO ══════════ -->
-    <section class="section section--alt" id="about">
-      <div class="container container--narrow">
-        <div class="section__head reveal">
-          <span class="section__eyebrow">04 — Why us</span>
-        </div>
-        <p class="manifesto reveal">
-          Most agencies <em class="serif">talk</em> about AI.
-          We've <em class="serif glow">shipped it</em> — four times, with our own money on the line.
-          ClearCount, WooPulse, Alethia, Morpheus OS: we build our own products,
-          so we know exactly where AI projects go wrong, and how to make yours go <em class="serif">right.</em>
-        </p>
-        <div class="about-grid reveal">
-          <div class="about-grid__item"><b>Builders, not brokers.</b> The people you meet are the people who code. Nothing is outsourced.</div>
-          <div class="about-grid__item"><b>Skin in the game.</b> We run our own AI products in production. Our advice is paid for by our own mistakes.</div>
-          <div class="about-grid__item"><b>Honest scoping.</b> If your idea doesn't need AI — or doesn't need us — we'll tell you in week one, not month six.</div>
-          <div class="about-grid__item"><b>You own everything.</b> Code, models, data, infrastructure. No lock-in, no rent, full handover.</div>
+        <div class="support__stats reveal">
+          <div class="support__stat"><b><span data-count="2" data-prefix="&lt;" data-suffix="min">0</span></b><small>median first response, live chat</small></div>
+          <div class="support__stat"><b><span data-count="96" data-suffix="%">0</span></b><small>issues solved on first contact</small></div>
+          <div class="support__stat"><b>24/7</b><small>real engineers, every timezone</small></div>
+          <div class="support__stat"><b>0</b><small>chatbots between you and help</small></div>
         </div>
       </div>
     </section>
@@ -375,23 +332,39 @@
     <section class="section" id="testimonials">
       <div class="container">
         <div class="section__head reveal">
-          <span class="section__eyebrow">05 — Kind words</span>
-          <h2 class="section__title">Don't take <em class="serif">our</em> word for it.</h2>
+          <span class="section__eyebrow">Customers</span>
+          <h2 class="section__title">People don't love their host.<br /><em>Ours do — loudly.</em></h2>
         </div>
         <div class="quotes">
-          <figure class="quote reveal" data-tilt>
-            <blockquote>"They prototyped the risky part of our AI idea in the first week and told us honestly what would and wouldn't work. We've never had an agency save us money before."</blockquote>
-            <figcaption><b>SaaS founder</b><span>feasibility sprint client</span></figcaption>
+          <figure class="quote reveal">
+            <blockquote>"Our store's load time went from 3.1s to 0.8s the day we migrated. Conversion is up 14% and I did literally nothing — their team moved everything overnight."</blockquote>
+            <figcaption><b>E-commerce owner</b><span>migrated from a legacy host</span></figcaption>
           </figure>
-          <figure class="quote reveal" data-tilt>
-            <blockquote>"Our team processes orders twice as fast since WooPulse. The granular access for our fulfilment partner alone was worth it."</blockquote>
-            <figcaption><b>Store owner</b><span>WooPulse customer</span></figcaption>
+          <figure class="quote reveal">
+            <blockquote>"I opened a chat at 2 a.m. expecting a bot. I got an engineer who fixed a DNS issue my old host had blamed on me for a year. Eleven minutes, done."</blockquote>
+            <figcaption><b>Agency founder</b><span>manages 40+ client sites</span></figcaption>
           </figure>
-          <figure class="quote reveal" data-tilt>
-            <blockquote>"Friday demos every single week, exactly as promised. The MVP shipped on time and the AI features actually work — not a demo trick, the real thing."</blockquote>
-            <figcaption><b>Product lead</b><span>MVP sprint client</span></figcaption>
+          <figure class="quote reveal">
+            <blockquote>"We got featured in national press and traffic went 50× in an hour. The site didn't blink. That single day paid for a decade of hosting."</blockquote>
+            <figcaption><b>SaaS founder</b><span>Scale plan customer</span></figcaption>
           </figure>
         </div>
+      </div>
+    </section>
+
+    <!-- ══════════ GUARANTEE ══════════ -->
+    <section class="guarantee reveal">
+      <div class="container guarantee__inner">
+        <div class="guarantee__seal" aria-hidden="true">30<small>days</small></div>
+        <div>
+          <h2 class="guarantee__title">Try us with zero risk. All of it is ours.</h2>
+          <p class="guarantee__sub">
+            Use everything for 30 days. If Cloud Industry isn't measurably faster than your
+            current host, one email gets you a full refund — and we'll even help you move back.
+            We can make that offer because almost no one takes it.
+          </p>
+        </div>
+        <a href="#pricing" class="btn btn--primary">Start now <span class="btn__arrow">→</span></a>
       </div>
     </section>
 
@@ -399,29 +372,33 @@
     <section class="section section--alt" id="faq">
       <div class="container container--narrow">
         <div class="section__head reveal">
-          <span class="section__eyebrow">06 — FAQ</span>
-          <h2 class="section__title">Questions we get <em class="serif">every time.</em></h2>
+          <span class="section__eyebrow">FAQ</span>
+          <h2 class="section__title">Everything people ask<br /><em>before they switch.</em></h2>
         </div>
         <div class="faq reveal">
           <details class="faq__item">
-            <summary>How much does an AI product cost to build?<span class="faq__icon">+</span></summary>
-            <p>A one-week feasibility audit is a fixed, small engagement. An MVP sprint is typically a 4–8 week fixed-scope project. Full platforms like Morpheus OS are phased. You always know the number before we start — no hourly meters running in the dark.</p>
+            <summary>Will my site go down during migration?<span class="faq__icon">+</span></summary>
+            <p>No. We build a full copy of your site on our platform while your current host keeps serving visitors. You test the copy, and only when you're satisfied do you point DNS at us. There is no moment where your site is offline.</p>
           </details>
           <details class="faq__item">
-            <summary>We're not sure AI is even the right solution. Can you tell us?<span class="faq__icon">+</span></summary>
-            <p>Yes — and we will, honestly. The feasibility audit exists precisely for this. Roughly a third of ideas we audit don't need AI, and we say so. The ones that do, get a working prototype as proof.</p>
+            <summary>Is the migration really free? What's the catch?<span class="faq__icon">+</span></summary>
+            <p>Really free, for any number of sites, on any plan. The "catch" is our business model: once you experience the speed difference, you stay. The 30-day guarantee means the risk of finding out is entirely ours.</p>
           </details>
           <details class="faq__item">
-            <summary>Which AI models and stack do you use?<span class="faq__icon">+</span></summary>
-            <p>Whatever serves the product: frontier APIs (Claude, GPT), open-weight models when privacy or cost demands it, classic ML when LLMs are overkill. The stack is modern and boring on purpose — your product shouldn't be a science experiment.</p>
+            <summary>What happens when my traffic spikes?<span class="faq__icon">+</span></summary>
+            <p>Your site stays up. Shared plans include burst capacity, and VPS resources resize live without a reboot. We notify you about sustained growth and recommend a plan — we never throttle you into a sales call.</p>
           </details>
           <details class="faq__item">
-            <summary>Who owns the code and the data?<span class="faq__icon">+</span></summary>
-            <p>You do. Full repository handover, infrastructure in your accounts, documentation included. We design for your independence, then earn the right to keep working with you.</p>
+            <summary>Do you lock me in with contracts or proprietary tech?<span class="faq__icon">+</span></summary>
+            <p>No. Standard stack (Linux, LiteSpeed/NGINX, MySQL/MariaDB), full backups you can download anytime, and no exit fees. We'd rather earn your renewal than trap it — that's also why we help you move back if you leave within the guarantee window.</p>
           </details>
           <details class="faq__item">
-            <summary>Do you work with existing teams or only greenfield?<span class="faq__icon">+</span></summary>
-            <p>Both. We've embedded with in-house teams to add AI capability, and we've built products solo from zero. We adapt to your process — weekly demos stay non-negotiable either way.</p>
+            <summary>What does the 99.99% uptime SLA actually mean?<span class="faq__icon">+</span></summary>
+            <p>It's contractual, not decorative: if measured monthly uptime falls below 99.99%, you're automatically credited per our SLA — you don't have to notice, file, or fight for it.</p>
+          </details>
+          <details class="faq__item">
+            <summary>How fast is support, honestly?<span class="faq__icon">+</span></summary>
+            <p>Live chat median first response is under 2 minutes, around the clock. Every agent is a systems engineer with server access — the person who answers is the person who fixes.</p>
           </details>
         </div>
       </div>
@@ -430,14 +407,18 @@
     <!-- ══════════ CTA ══════════ -->
     <section class="cta" id="contact">
       <div class="container">
-        <div class="cta__card reveal" data-tilt>
-          <span class="section__eyebrow">07 — Say hello</span>
-          <h2 class="cta__title">Have an AI idea?<br /><em class="serif glow">Let's make it real.</em></h2>
-          <p class="cta__sub">Tell us what you're building. We reply within 24 hours with honest first thoughts — no sales script, no discovery-call maze.</p>
+        <div class="cta__card reveal">
+          <h2 class="cta__title">Your visitors are waiting.<br /><em>Don't make them.</em></h2>
+          <p class="cta__sub">
+            Launch a new site in minutes, or hand us your current host's login and
+            wake up on faster infrastructure tomorrow. Either way, the guarantee
+            means you risk nothing.
+          </p>
           <div class="cta__actions">
-            <a class="btn btn--primary btn--big" href="mailto:hello@cloudindustry.example?subject=AI%20project%20inquiry" data-magnetic>hello@cloudindustry <span class="btn__arrow">→</span></a>
-            <span class="cta__hint">or book a 20-minute intro call</span>
+            <a class="btn btn--primary btn--big" href="#pricing">Choose a plan <span class="btn__arrow">→</span></a>
+            <a class="btn btn--ghost btn--big" href="mailto:hello@cloudindustry.example?subject=Free%20migration%20request">Request free migration</a>
           </div>
+          <p class="hero__assure">30-day money-back &nbsp;·&nbsp; Free migration &nbsp;·&nbsp; No setup fees &nbsp;·&nbsp; Cancel anytime</p>
         </div>
       </div>
     </section>
@@ -448,32 +429,36 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <span class="nav__logo"><span class="nav__logo-mark">◆</span> cloud<span class="nav__logo-accent">industry</span></span>
-        <p>AI app development agency.<br />We build AI products that ship.</p>
+        <span class="nav__logo"><span class="nav__logo-mark">▲</span> cloud<span class="nav__logo-accent">industry</span></span>
+        <p data-cms="site.footer.contactBlurb" data-cms-html>High-performance cloud hosting.<br />Fast. Guarded. Answered in minutes.</p>
+        <p class="footer__status"><span class="status-pill__dot"></span> All systems operational</p>
       </div>
       <div class="footer__col">
-        <h4>Products</h4>
-        <a href="#work">ClearCount.ai</a>
-        <a href="#work">WooPulse</a>
-        <a href="#work">Alethia.me</a>
-        <a href="#work">Morpheus OS</a>
+        <h4>Services</h4>
+        <a href="#services">Web Hosting</a>
+        <a href="#services">Cloud VPS</a>
+        <a href="#services">Dedicated Servers</a>
+        <a href="#services">Managed WordPress</a>
+        <a href="#services">Domains &amp; DNS</a>
+        <a href="#services">CDN &amp; Edge</a>
       </div>
       <div class="footer__col">
-        <h4>Agency</h4>
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <h4>Company</h4>
+        <a href="#pricing">Pricing</a>
+        <a href="#migration">Free migration</a>
+        <a href="tetra.html">Tetra Host console</a>
+        <a href="#support">Support</a>
+        <a href="#faq">FAQ</a>
       </div>
       <div class="footer__col">
         <h4>Elsewhere</h4>
-        <a href="#" rel="noopener">LinkedIn</a>
+        <a href="#" rel="noopener">Status page</a>
         <a href="#" rel="noopener">X / Twitter</a>
         <a href="#" rel="noopener">GitHub</a>
       </div>
     </div>
     <div class="container footer__bottom">
-      <span>© 2026 Cloud Industry. All rights reserved.</span>
+      <span data-cms="site.footer.copyright">© 2026 Cloud Industry. All rights reserved.</span>
       <a href="#top" class="footer__top">Back to top ↑</a>
     </div>
   </footer>
@@ -484,5 +469,9 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="js/main.js"></script>
+  <!-- imba-cms backend: fill in your Supabase project URL + anon key to enable
+       (see docs/cms-integration.md). Empty config = static copy only. -->
+  <script>window.IMBA_CMS = { url: "", anonKey: "" };</script>
+  <script src="js/cms.js" defer></script>
 </body>
 </html>

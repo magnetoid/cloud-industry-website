@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tetra Host — The Cloud Industry Console. Your Infrastructure, One Calm Screen.</title>
+  <meta name="description" content="Tetra Host is the Cloud Industry control console at console.cloud-industry.com: manage sites, deploys, DNS, backups, metrics and your team from one fast, keyboard-first dashboard." />
+  <meta property="og:title" content="Tetra Host — The Cloud Industry Console" />
+  <meta property="og:description" content="Sites, deploys, DNS, backups, metrics and team access — one fast console at console.cloud-industry.com." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=switzer@400,500,600&display=swap" rel="stylesheet" />
+  <script>
+    /* set theme before first paint to avoid a flash */
+    document.documentElement.dataset.theme =
+      localStorage.getItem("theme") ||
+      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232547F4'/><text x='50' y='71' font-size='58' text-anchor='middle' fill='white' font-family='monospace'>▲</text></svg>" />
+</head>
+<body data-cms-page="tetra">
+
+  <!-- ══════════ NAV ══════════ -->
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-mark">▲</span> cloud<span class="nav__logo-accent">industry</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#migration">Migration</a>
+        <a href="tetra.html" aria-current="page">Tetra Host</a>
+        <a href="index.html#support">Support</a>
+      </nav>
+      <a class="status-pill" href="index.html#support" title="Live platform status">
+        <span class="status-pill__dot" aria-hidden="true"></span> All systems operational
+      </a>
+      <button class="theme-toggle" aria-label="Switch color theme" title="Switch theme">☾</button>
+      <a href="https://console.cloud-industry.com" class="btn btn--small">Open console <span class="btn__arrow">→</span></a>
+      <button class="nav__burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <button class="theme-toggle" aria-label="Switch color theme" title="Switch theme">☾</button>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#migration">Migration</a>
+    <a href="tetra.html">Tetra Host</a>
+    <a href="index.html#support">Support</a>
+    <a href="https://console.cloud-industry.com" class="btn">Open console →</a>
+  </div>
+
+  <main>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="hero__eyebrow reveal">
+            <span class="status-pill__dot" aria-hidden="true"></span>
+            <span data-cms="hero.eyebrow">console.cloud-industry.com</span>
+          </p>
+          <h1 class="hero__title" data-cms="hero.title" data-cms-html>
+            Tetra Host.<br />Your infrastructure,<br /><em>one calm screen.</em>
+          </h1>
+          <p class="hero__sub reveal" data-cms="hero.sub" data-cms-html>
+            Most hosting panels feel like a filing cabinet from 2009. Tetra Host is
+            the console we always wanted: every site, deploy, DNS record, backup and
+            teammate — <strong>two clicks or one keystroke away</strong>. It ships
+            with every Cloud Industry plan, at no extra cost.
+          </p>
+          <div class="hero__cta reveal">
+            <a href="https://console.cloud-industry.com" class="btn btn--primary">Open the console <span class="btn__arrow">→</span></a>
+            <a href="index.html#pricing" class="btn btn--ghost">Get a plan first</a>
+          </div>
+          <p class="hero__assure reveal" data-cms="hero.assure" data-cms-html>
+            Included with every plan &nbsp;·&nbsp; Works on any device &nbsp;·&nbsp; No training required
+          </p>
+        </div>
+
+        <!-- console dashboard mockup -->
+        <div class="hero__panel reveal" aria-label="Tetra Host console preview">
+          <div class="term console">
+            <div class="term__bar">
+              <i></i><i></i><i></i>
+              <span>console.cloud-industry.com</span>
+              <b class="term__live"><span class="status-pill__dot"></span> live</b>
+            </div>
+            <div class="console__body">
+              <div class="console__side" aria-hidden="true">
+                <span class="is-active">Sites</span>
+                <span>Deploys</span>
+                <span>DNS</span>
+                <span>Backups</span>
+                <span>Metrics</span>
+                <span>Team</span>
+              </div>
+              <div class="console__main">
+                <div class="console__kpis">
+                  <div class="console__kpi"><b>8</b><small>sites, all healthy</small></div>
+                  <div class="console__kpi"><b>21<i>ms</i></b><small>ttfb now</small></div>
+                  <div class="console__kpi"><b>03:12</b><small>last backup, auto</small></div>
+                </div>
+                <div class="console__rows">
+                  <p><span class="t-ok">●</span> my-store.com <span class="t-dim">deployed 4 min ago · v2.4.1</span></p>
+                  <p><span class="t-ok">●</span> blog.my-store.com <span class="t-dim">cache purged · 210 edges</span></p>
+                  <p><span class="t-ok">●</span> api.my-store.com <span class="t-dim">autoscaled +1 instance</span></p>
+                  <p><span class="t-dim">⌘K — jump anywhere</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ FEATURES ══════════ -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">The console</span>
+          <h2 class="section__title">Everything you'd SSH in for.<br /><em>Without the SSH.</em></h2>
+          <p class="section__sub">Tetra Host puts the whole platform under one login — and everything it shows you, it lets you act on.</p>
+        </div>
+
+        <div class="services services--3">
+          <article class="svc reveal">
+            <span class="svc__id">tetra/sites</span>
+            <h3>Sites &amp; Deploys</h3>
+            <p>Create, clone or roll back a site in seconds. Every deploy is versioned — the undo button works even after Friday releases.</p>
+            <ul class="svc__spec"><li>1-click rollback</li><li>Deploy previews</li><li>Git push-to-deploy</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">tetra/dns</span>
+            <h3>DNS Editor</h3>
+            <p>Records propagate in seconds on anycast DNS, with validation that catches the typo before it takes your mail down.</p>
+            <ul class="svc__spec"><li>Instant propagation</li><li>Record validation</li><li>Import from any host</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">tetra/backup</span>
+            <h3>Backups &amp; Restore</h3>
+            <p>Browse every daily snapshot like a time machine. Restore a whole site — or a single file — without opening a ticket.</p>
+            <ul class="svc__spec"><li>File-level restore</li><li>30-day timeline</li><li>Download anytime</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">tetra/metrics</span>
+            <h3>Live Metrics</h3>
+            <p>Real traffic, real response times, real errors — the same numbers our engineers see, not a vanity dashboard.</p>
+            <ul class="svc__spec"><li>Per-site TTFB</li><li>Error alerting</li><li>Traffic anomaly flags</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">tetra/team</span>
+            <h3>Team Access</h3>
+            <p>Invite collaborators with exactly the access they need — your developer gets deploys, your accountant gets invoices, nobody gets your password.</p>
+            <ul class="svc__spec"><li>Role-based access</li><li>Audit log</li><li>2FA enforced</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">tetra/cmd</span>
+            <h3>Command Palette</h3>
+            <p>Press ⌘K and type. Any site, any setting, any action — reachable in a keystroke. Operators never touch the mouse.</p>
+            <ul class="svc__spec"><li>⌘K everywhere</li><li>Fuzzy search</li><li>Recent actions first</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ WHY IT MATTERS ══════════ -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Why it matters</span>
+          <h2 class="section__title">A panel you dread<br /><em>is downtime you don't measure.</em></h2>
+          <p class="section__sub">
+            Every minute spent hunting through a clunky control panel is a minute your
+            problem stays unfixed. Tetra Host is built on one rule: see it, fix it,
+            same screen. That's why teams who try it stop counting "panel time" at all.
+          </p>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <span class="step__num">see</span>
+            <h3>Status without digging</h3>
+            <p>The first screen answers the only question that matters at a glance: is everything up, fast and backed up? Green means go back to work.</p>
+          </div>
+          <div class="step reveal">
+            <span class="step__num">act</span>
+            <h3>Fix from the same view</h3>
+            <p>Spot a slow site, purge its cache. See a bad deploy, roll it back. No context switch, no second tool, no ticket to yourself.</p>
+          </div>
+          <div class="step reveal">
+            <span class="step__num">leave</span>
+            <h3>Get out fast</h3>
+            <p>The best console is the one you close quickly. Median Tetra Host session: under three minutes. That's the compliment we optimize for.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ CTA ══════════ -->
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta__card reveal">
+          <h2 class="cta__title">See your whole stack<br /><em>on one screen.</em></h2>
+          <p class="cta__sub">
+            Tetra Host is included with every Cloud Industry plan — no add-on, no
+            "pro console" upsell. If you already have an account, it's waiting for you.
+          </p>
+          <div class="cta__actions">
+            <a class="btn btn--primary btn--big" href="https://console.cloud-industry.com">Open the console <span class="btn__arrow">→</span></a>
+            <a class="btn btn--ghost btn--big" href="index.html#pricing">Choose a plan</a>
+          </div>
+          <p class="hero__assure">Included with every plan &nbsp;·&nbsp; 30-day money-back &nbsp;·&nbsp; Cancel anytime</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="nav__logo"><span class="nav__logo-mark">▲</span> cloud<span class="nav__logo-accent">industry</span></span>
+        <p data-cms="site.footer.contactBlurb" data-cms-html>High-performance cloud hosting.<br />Fast. Guarded. Answered in minutes.</p>
+        <p class="footer__status"><span class="status-pill__dot"></span> All systems operational</p>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <a href="index.html#services">Web Hosting</a>
+        <a href="index.html#services">Cloud VPS</a>
+        <a href="index.html#services">Dedicated Servers</a>
+        <a href="index.html#services">Managed WordPress</a>
+        <a href="index.html#services">Domains &amp; DNS</a>
+        <a href="index.html#services">CDN &amp; Edge</a>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#migration">Free migration</a>
+        <a href="tetra.html">Tetra Host console</a>
+        <a href="index.html#support">Support</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="footer__col">
+        <h4>Elsewhere</h4>
+        <a href="https://console.cloud-industry.com" rel="noopener">console.cloud-industry.com</a>
+        <a href="#" rel="noopener">Status page</a>
+        <a href="#" rel="noopener">X / Twitter</a>
+        <a href="#" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span data-cms="site.footer.copyright">© 2026 Cloud Industry. All rights reserved.</span>
+      <a href="#top" class="footer__top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- motion stack: GSAP ScrollTrigger + Lenis smooth scroll.
+       main.js feature-detects these — the site fully works without them. -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+  <!-- imba-cms backend: fill in your Supabase project URL + anon key to enable
+       (see docs/cms-integration.md). Empty config = static copy only. -->
+  <script>window.IMBA_CMS = { url: "", anonKey: "" };</script>
+  <script src="js/cms.js" defer></script>
+</body>
+</html>
