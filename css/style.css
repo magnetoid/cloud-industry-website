@@ -2,11 +2,11 @@
    Cloud Industry — hosting platform
    Minimal, precise, engineered. One accent (ultramarine);
    green is reserved for operational-status semantics only.
-   Display: Archivo Expanded · Body: Switzer · Data: JetBrains Mono
+   Display: Geist (heavy weights) · Body: Switzer · Data: JetBrains Mono
    ══════════════════════════════════════════════════════════ */
 
 :root {
-  --font-display: "Archivo", "Switzer", system-ui, sans-serif;
+  --font-display: "Geist", "Switzer", system-ui, sans-serif;
   --font-body: "Switzer", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
@@ -25,7 +25,7 @@
   --term-ink: #d7deec;
   --shadow: 0 1px 2px rgba(11, 18, 32, 0.05), 0 12px 32px -16px rgba(11, 18, 32, 0.18);
 
-  --container: 1160px;
+  --container: 1440px;
   --radius: 14px;
   --nav-h: 68px;
   color-scheme: light;
@@ -79,12 +79,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .container--narrow { max-width: 780px; }
 
-/* Archivo's width axis: everything set in the display face runs expanded */
+/* Geist carries strength through weight and tight tracking */
 :is(.hero__title, .section__title, .cta__title, .guarantee__title,
-    .plan__name, .svc h3, .step h3, .faq__item summary, .nav__logo,
-    .proof__item b, .support__stat b, .support__channels b,
-    .ledger__value, .quote figcaption b, .plan__price b) {
-  font-stretch: 125%;
+    .plan__name, .proof__item b, .support__stat b, .ledger__value,
+    .plan__price b) {
+  font-weight: 900;
+  letter-spacing: -0.035em;
 }
 
 /* ── status dot (semantic green — operational only) ───── */
@@ -129,7 +129,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .nav.is-scrolled { border-bottom-color: var(--hairline); }
 .nav__inner {
-  width: min(var(--container), 100% - 3rem);
+  /* nav runs edge-to-edge: brand hugs the left, actions hug the right */
+  width: calc(100% - 3rem);
   margin-inline: auto;
   height: 100%;
   display: flex;
@@ -245,8 +246,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .hero__grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 4rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(3rem, 6vw, 7rem);
   align-items: center;
 }
 .hero__eyebrow {
@@ -262,8 +263,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hero__title {
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(2.3rem, 4.4vw, 3.8rem);
-  line-height: 1.04;
+  font-size: clamp(2.6rem, 5.2vw, 5.6rem);
+  line-height: 1.0;
   letter-spacing: -0.02em;
   color: #fff;
   margin-bottom: 1.5rem;
@@ -274,9 +275,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--accent);
 }
 .hero__sub {
-  font-size: 1.08rem;
+  font-size: clamp(1.05rem, 1.2vw, 1.22rem);
   color: #a7b0c4;
-  max-width: 34rem;
+  max-width: 38rem;
   margin-bottom: 2rem;
 }
 .hero__sub strong { color: #fff; }
@@ -497,9 +498,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .proof__item small { color: var(--muted); font-size: 0.82rem; }
 
 /* ── sections ──────────────────────────────────────────── */
-.section { padding: 6.5rem 0; }
+.section { padding: clamp(6rem, 9vw, 9rem) 0; }
 .section--alt { background: var(--bg-alt); border-block: 1px solid var(--hairline); }
-.section__head { max-width: 640px; margin-bottom: 3.5rem; }
+.section__head { max-width: 760px; margin-bottom: clamp(3rem, 4vw, 4.5rem); }
 .section__eyebrow {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -512,7 +513,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .section__title {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  font-size: clamp(1.9rem, 3.2vw, 3.3rem);
   line-height: 1.08;
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
