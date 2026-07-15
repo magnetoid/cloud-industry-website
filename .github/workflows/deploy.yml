@@ -19,3 +19,13 @@ jobs:
           curl -sf -X POST \
             -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}" \
             "https://coo.imbamarketing.com/api/v1/deploy?uuid=z4q6gzuvaydizeaxa5hmw7m2&force=false"
+
+      - name: Wait for build, then purge Cloudflare cache
+        run: |
+          sleep 150
+          curl -sf -X POST \
+            -H "X-Auth-Email: ${{ secrets.CLOUDFLARE_EMAIL }}" \
+            -H "X-Auth-Key: ${{ secrets.CLOUDFLARE_KEY }}" \
+            -H "Content-Type: application/json" \
+            "https://api.cloudflare.com/client/v4/zones/d8eadb48361fd41986a18c9039bce10a/purge_cache" \
+            -d '{"purge_everything":true}'
