@@ -1,0 +1,21 @@
+name: Deploy to Coolify
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "tetra.html"
+      - "css/**"
+      - "js/**"
+      - "assets/**"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Coolify deployment
+        run: |
+          curl -sf -X POST \
+            -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}" \
+            "https://coo.imbamarketing.com/api/v1/deploy?uuid=z4q6gzuvaydizeaxa5hmw7m2&force=false"
