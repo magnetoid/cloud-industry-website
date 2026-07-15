@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cloud Industry — Cloud Hosting That Never Blinks. 99.99% Uptime, Free Migration.</title>
-  <meta name="description" content="Cloud Industry is a high-performance cloud hosting platform: NVMe web hosting, cloud VPS, dedicated servers, managed WordPress, CDN, domains, security and 24/7 engineer support. Free zero-downtime migration, 30-day money-back guarantee." />
-  <meta property="og:title" content="Cloud Industry — Cloud Hosting That Never Blinks" />
-  <meta property="og:description" content="NVMe hosting with a 99.99% uptime SLA, sub-second load times worldwide, and engineers who answer in minutes. We move you in for free." />
+  <title>Cloud Industry — AI Infrastructure That Never Blinks. GPUs, Inference, 99.99% SLA.</title>
+  <meta name="description" content="Cloud Industry is AI infrastructure for power users and businesses: on-demand GPU compute, serverless inference endpoints, model hosting, fine-tuning, vector & RAG infrastructure, agent runtimes and 24/7 ML engineer support. Free parallel migration, 30-day money-back guarantee." />
+  <meta property="og:title" content="Cloud Industry — AI Infrastructure That Never Blinks" />
+  <meta property="og:description" content="H100-class GPUs, sub-25ms first tokens, a 99.99% inference SLA and ML engineers who answer in minutes. We mirror your stack for free — flip traffic when the numbers win." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,12 +30,12 @@
         <span class="nav__logo-mark">▲</span> cloud<span class="nav__logo-accent">industry</span>
       </a>
       <nav class="nav__links" aria-label="Primary">
+        <a href="platform.html">Platform</a>
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#migration">Migration</a>
         <a href="tetra.html">Tetra Host</a>
         <a href="#support">Support</a>
-        <a href="#faq">FAQ</a>
       </nav>
       <a class="status-pill" href="#support" title="Live platform status">
         <span class="status-pill__dot" aria-hidden="true"></span> All systems operational
@@ -50,12 +50,12 @@
 
   <div class="mobile-menu" aria-hidden="true">
     <button class="theme-toggle" aria-label="Switch color theme" title="Switch theme">☾</button>
+    <a href="platform.html">Platform</a>
     <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
     <a href="#migration">Migration</a>
     <a href="tetra.html">Tetra Host</a>
     <a href="#support">Support</a>
-    <a href="#faq">FAQ</a>
     <a href="#pricing" class="btn">Get started →</a>
   </div>
 
@@ -67,24 +67,25 @@
         <div class="hero__copy">
           <p class="hero__eyebrow reveal">
             <span class="status-pill__dot" aria-hidden="true"></span>
-            <span data-cms="hero.eyebrow">uptime 99.99% · last 90 days</span>
+            <span data-cms="hero.eyebrow">inference uptime 99.99% · last 90 days</span>
           </p>
           <h1 class="hero__title" data-cms="hero.title" data-cms-html>
-            The last host<br />you'll ever<br /><em>migrate to.</em>
+            AI infrastructure<br />for teams that<br /><em>actually ship.</em>
           </h1>
           <p class="hero__sub reveal" data-cms="hero.sub" data-cms-html>
-            Every second your site loads slowly, someone leaves — and buys from a
-            competitor. Cloud Industry runs your site on NVMe cloud infrastructure
-            with a <strong>99.99% uptime SLA</strong>, global edge caching, and
-            engineers who answer in minutes. We move you in <strong>free, in under
-            24 hours, with zero downtime.</strong>
+            Every second of model latency loses a user, and every idle GPU burns
+            money you'll never get back. Cloud Industry runs your models on
+            H100-class compute with <strong>sub-25ms first tokens</strong>, a
+            <strong>99.99% inference SLA</strong>, and hard budget caps — so the
+            invoice is never the surprise. We mirror your current stack
+            <strong>free, side by side, before you move a single request.</strong>
           </p>
           <div class="hero__cta reveal">
-            <a href="#pricing" class="btn btn--primary">Launch your site <span class="btn__arrow">→</span></a>
-            <a href="#migration" class="btn btn--ghost">Get free migration</a>
+            <a href="#pricing" class="btn btn--primary">Deploy a model <span class="btn__arrow">→</span></a>
+            <a href="#migration" class="btn btn--ghost">Get free parallel run</a>
           </div>
           <p class="hero__assure reveal" data-cms="hero.assure" data-cms-html>
-            30-day money-back guarantee &nbsp;·&nbsp; No setup fees &nbsp;·&nbsp; Cancel anytime
+            30-day money-back guarantee &nbsp;·&nbsp; $0 egress — leave anytime &nbsp;·&nbsp; Hard spend limits
           </p>
         </div>
 
@@ -97,12 +98,12 @@
               <b class="term__live"><span class="status-pill__dot"></span> live</b>
             </div>
             <div class="term__body" id="termBody" aria-live="off">
-              <p class="term__seed"><span class="t-prompt">$</span> cloud deploy my-store.com<span class="t-cursor">▊</span></p>
+              <p class="term__seed"><span class="t-prompt">$</span> cloud deploy llama-3-70b<span class="t-cursor">▊</span></p>
             </div>
             <div class="term__metrics">
-              <div class="term__metric"><b id="mLatency">—</b><small>ttfb, global avg</small></div>
-              <div class="term__metric"><b>99.99<i>%</i></b><small>uptime SLA</small></div>
-              <div class="term__metric"><b id="mEdge">210</b><small>edge locations</small></div>
+              <div class="term__metric"><b id="mLatency">—</b><small>first token, p50</small></div>
+              <div class="term__metric"><b>99.99<i>%</i></b><small>inference SLA</small></div>
+              <div class="term__metric"><b id="mEdge">210</b><small>edge regions</small></div>
             </div>
           </div>
         </div>
@@ -114,7 +115,7 @@
       <div class="container">
         <div class="ledger reveal">
           <div class="ledger__head">
-            <span class="ledger__label">uptime — one bar per day, <span class="ledger__d90">last 90 days</span><span class="ledger__d30">last 30 days</span></span>
+            <span class="ledger__label">inference uptime — one bar per day, <span class="ledger__d90">last 90 days</span><span class="ledger__d30">last 30 days</span></span>
             <b class="ledger__value">99.99%</b>
           </div>
           <div class="ledger__ticks" id="ledgerTicks" aria-hidden="true"></div>
@@ -125,10 +126,10 @@
           </p>
         </div>
         <div class="proof__grid reveal">
-          <div class="proof__item"><b><span data-count="12400" data-suffix="+">0</span></b><small>sites hosted &amp; growing daily</small></div>
-          <div class="proof__item"><b><span data-count="22" data-suffix="ms">0</span></b><small>avg. time-to-first-byte</small></div>
+          <div class="proof__item"><b><span data-count="1400" data-suffix="+">0</span></b><small>teams running production AI</small></div>
+          <div class="proof__item"><b><span data-count="24" data-suffix="ms">0</span></b><small>median first-token latency</small></div>
           <div class="proof__item"><b><span data-count="4" data-suffix=".9/5">0</span></b><small>support rating from 3,000+ reviews</small></div>
-          <div class="proof__item"><b><span data-count="0" data-prefix="$">0</span></b><small>cost to switch — migration is on us</small></div>
+          <div class="proof__item"><b><span data-count="0" data-prefix="$">0</span></b><small>egress fees — your weights leave free</small></div>
         </div>
       </div>
     </section>
@@ -138,58 +139,58 @@
       <div class="container">
         <div class="section__head reveal">
           <span class="section__eyebrow">Services</span>
-          <h2 class="section__title">Everything your site needs.<br /><em>Nothing it doesn't.</em></h2>
-          <p class="section__sub">One platform, one invoice, one team that answers for all of it. No juggling five vendors when something breaks at 3 a.m.</p>
+          <h2 class="section__title">Everything your AI stack needs.<br /><em>Nothing it doesn't.</em></h2>
+          <p class="section__sub">One platform, one invoice, one team that answers for all of it. No juggling a GPU broker, a vector-DB vendor and a gateway startup when inference breaks at 3 a.m.</p>
         </div>
 
         <div class="services">
           <article class="svc reveal">
-            <span class="svc__id">srv/web</span>
-            <h3>Web Hosting</h3>
-            <p>NVMe-powered shared hosting that outruns most competitors' VPS plans. Free SSL, one-click installs, instant setup.</p>
-            <ul class="svc__spec"><li>NVMe SSD storage</li><li>LiteSpeed + HTTP/3</li><li>Free SSL &amp; email</li></ul>
+            <span class="svc__id">ai/gpu</span>
+            <h3>GPU Cloud</h3>
+            <p>H100, A100 and L40S capacity on demand, billed per second. Spin up a node faster than your coffee order — release it just as fast.</p>
+            <ul class="svc__spec"><li>Per-second billing</li><li>Reserved &amp; spot pools</li><li>NVLink multi-GPU nodes</li></ul>
           </article>
           <article class="svc reveal">
-            <span class="svc__id">srv/vps</span>
-            <h3>Cloud VPS</h3>
-            <p>Dedicated resources that scale in seconds, not support tickets. Resize live — your traffic spike is not an outage.</p>
-            <ul class="svc__spec"><li>Deploy in &lt;60s</li><li>Hourly billing</li><li>Snapshots included</li></ul>
+            <span class="svc__id">ai/serverless</span>
+            <h3>Inference Endpoints</h3>
+            <p>Serverless, OpenAI-compatible APIs for any model. Scale to zero when idle, autoscale when you're on the front page.</p>
+            <ul class="svc__spec"><li>Scale-to-zero</li><li>Warm pools, no cold starts</li><li>OpenAI-compatible API</li></ul>
           </article>
           <article class="svc reveal">
-            <span class="svc__id">srv/metal</span>
-            <h3>Dedicated Servers</h3>
-            <p>Bare metal for workloads that share with no one. Latest-gen CPUs, unmetered private networking, IPMI access.</p>
-            <ul class="svc__spec"><li>Single-tenant hardware</li><li>Custom configs</li><li>Same-day provisioning</li></ul>
+            <span class="svc__id">ai/models</span>
+            <h3>Model Hosting</h3>
+            <p>Llama, Mistral, Qwen and hundreds of open models — plus your own fine-tunes — deployed from a registry, versioned like code.</p>
+            <ul class="svc__spec"><li>300+ open models</li><li>Your weights, versioned</li><li>Instant rollback</li></ul>
           </article>
           <article class="svc reveal">
-            <span class="svc__id">srv/wp</span>
-            <h3>Managed WordPress</h3>
-            <p>WordPress that stays fast, patched and online — without you thinking about it. Staging, auto-updates, malware watch.</p>
-            <ul class="svc__spec"><li>1-click staging</li><li>Auto core updates</li><li>Object cache built in</li></ul>
+            <span class="svc__id">ai/train</span>
+            <h3>Fine-tuning &amp; Training</h3>
+            <p>Managed training jobs with checkpoints, spot-interruption recovery and cost estimates before you press run — not after.</p>
+            <ul class="svc__spec"><li>LoRA &amp; full fine-tunes</li><li>Auto checkpointing</li><li>Upfront cost estimate</li></ul>
           </article>
           <article class="svc reveal">
-            <span class="svc__id">srv/dns</span>
-            <h3>Domains &amp; DNS</h3>
-            <p>Register, transfer, and manage domains with anycast DNS that resolves in milliseconds anywhere on Earth.</p>
-            <ul class="svc__spec"><li>Free WHOIS privacy</li><li>Anycast DNS</li><li>At-cost renewals</li></ul>
+            <span class="svc__id">ai/rag</span>
+            <h3>Vector &amp; RAG Infra</h3>
+            <p>Managed vector search and embedding pipelines that stay in sync with your data — retrieval that doesn't hallucinate your reputation away.</p>
+            <ul class="svc__spec"><li>Managed vector DB</li><li>Embedding pipelines</li><li>Hybrid search built in</li></ul>
           </article>
           <article class="svc reveal">
-            <span class="svc__id">srv/edge</span>
-            <h3>CDN &amp; Edge</h3>
-            <p>Your content cached in 210 cities, so a visitor in Tokyo loads as fast as one next door to the server.</p>
-            <ul class="svc__spec"><li>210 edge locations</li><li>Smart image optimization</li><li>Zero-config setup</li></ul>
+            <span class="svc__id">ai/agents</span>
+            <h3>Agent Runtime</h3>
+            <p>Long-running agents with tool sandboxes, queues and human-in-the-loop checkpoints. Built for work that takes hours, not tokens.</p>
+            <ul class="svc__spec"><li>Sandboxed tool use</li><li>Durable queues</li><li>Approval checkpoints</li></ul>
           </article>
           <article class="svc reveal">
-            <span class="svc__id">srv/sec</span>
-            <h3>Security &amp; DDoS</h3>
-            <p>Enterprise-grade protection on every plan — not sold back to you as an add-on. WAF, DDoS mitigation, malware scanning.</p>
-            <ul class="svc__spec"><li>Always-on DDoS shield</li><li>Web application firewall</li><li>Free SSL, forever</li></ul>
+            <span class="svc__id">ai/private</span>
+            <h3>Private AI</h3>
+            <p>Dedicated GPU clusters in your VPC with EU data residency. Your prompts and weights never share a machine with anyone.</p>
+            <ul class="svc__spec"><li>Single-tenant clusters</li><li>VPC peering</li><li>EU data residency</li></ul>
           </article>
           <article class="svc reveal">
-            <span class="svc__id">srv/store</span>
-            <h3>Storage &amp; Backups</h3>
-            <p>S3-compatible object storage and automatic daily backups with one-click restore. The undo button your business deserves.</p>
-            <ul class="svc__spec"><li>Daily auto-backups</li><li>30-day retention</li><li>One-click restore</li></ul>
+            <span class="svc__id">ai/obs</span>
+            <h3>Observability &amp; Evals</h3>
+            <p>Token-level tracing, latency percentiles, eval suites and spend alerts. The same dashboards our engineers watch, in your console.</p>
+            <ul class="svc__spec"><li>Token-level traces</li><li>Continuous evals</li><li>Hard budget caps</li></ul>
           </article>
         </div>
       </div>
@@ -200,27 +201,27 @@
       <div class="container">
         <div class="section__head reveal">
           <span class="section__eyebrow">Switching</span>
-          <h2 class="section__title">Moving hosts feels risky.<br /><em>So we removed the risk.</em></h2>
-          <p class="section__sub">The only reason people stay with a host they hate is the fear of migrating. Here's how we make that fear irrational:</p>
+          <h2 class="section__title">Leaving big-cloud GPUs feels risky.<br /><em>So we removed the risk.</em></h2>
+          <p class="section__sub">The only reason teams keep overpaying for inference is the fear of moving production traffic. Here's how we make that fear irrational:</p>
         </div>
         <div class="steps">
           <div class="step reveal">
             <span class="step__num">step 1</span>
-            <h3>Tell us where you are</h3>
-            <p>Share your current hosting login — or just a backup file. That's the entire extent of your work. Seriously, that's it.</p>
+            <h3>Show us your stack</h3>
+            <p>Endpoints, models, weights, traffic profile. Read-only access or a description is enough — that's the entire extent of your work.</p>
           </div>
           <div class="step reveal">
             <span class="step__num">step 2</span>
-            <h3>We move everything, free</h3>
-            <p>Our migration engineers copy your sites, databases, email and DNS within 24 hours. You pay nothing, whatever the size.</p>
+            <h3>We mirror it, free</h3>
+            <p>Our ML engineers stand up an identical deployment — same models, same context lengths — and benchmark it side by side against your current provider.</p>
           </div>
           <div class="step reveal">
             <span class="step__num">step 3</span>
-            <h3>You switch when you're sure</h3>
-            <p>Your old host stays live until you've tested everything and flip DNS yourself. Zero downtime. Zero leap of faith.</p>
+            <h3>Flip traffic when the numbers win</h3>
+            <p>You see the p95 latency and the projected invoice before a single production request moves. If we don't win on both, you've lost nothing.</p>
           </div>
         </div>
-        <p class="steps__note reveal">Most migrations complete the same day. Your visitors never notice — except that the site got faster.</p>
+        <p class="steps__note reveal">Most parallel runs are live within 48 hours. Your users never notice — except that answers arrive faster.</p>
       </div>
     </section>
 
@@ -230,7 +231,7 @@
         <div class="section__head reveal">
           <span class="section__eyebrow">Pricing</span>
           <h2 class="section__title">Honest pricing.<br /><em>Every feature that matters, on every plan.</em></h2>
-          <p class="section__sub">SSL, backups, DDoS protection and real support are included everywhere — we don't hold your security hostage for an upsell.</p>
+          <p class="section__sub">Observability, budget caps, DDoS protection and real support are included everywhere — we don't hold your production safety hostage for an upsell.</p>
         </div>
 
         <div class="billing reveal" role="group" aria-label="Billing period">
@@ -240,63 +241,65 @@
 
         <div class="plans">
           <article class="plan reveal">
-            <h3 class="plan__name">Launch</h3>
-            <p class="plan__for">For a first site or portfolio</p>
+            <h3 class="plan__name">Build</h3>
+            <p class="plan__for">For power users &amp; side projects</p>
             <p class="plan__price">
-              <span class="plan__was" data-was-monthly="$5.99" data-was-yearly="$5.99">$5.99</span>
-              <b><span class="plan__num" data-monthly="4.49" data-yearly="2.99">2.99</span></b><span class="plan__per">/mo</span>
+              <span class="plan__was" data-was-monthly="$59" data-was-yearly="$59">$59</span>
+              <b><span class="plan__num" data-monthly="44" data-yearly="29">29</span></b><span class="plan__per">/mo</span>
             </p>
-            <a href="#contact" class="btn btn--ghost btn--full">Choose Launch</a>
+            <a href="#contact" class="btn btn--ghost btn--full">Choose Build</a>
             <ul class="plan__feat">
-              <li>1 website</li>
-              <li>25 GB NVMe storage</li>
-              <li>Free SSL &amp; daily backups</li>
-              <li>Free domain, first year</li>
-              <li>24/7 support</li>
+              <li>Serverless inference, all open models</li>
+              <li>5M tokens included monthly</li>
+              <li>Scale-to-zero endpoints</li>
+              <li>Token-level tracing</li>
+              <li>24/7 engineer chat</li>
             </ul>
           </article>
 
           <article class="plan plan--hot reveal">
             <span class="plan__badge">Most popular — 7 in 10 choose this</span>
-            <h3 class="plan__name">Grow</h3>
-            <p class="plan__for">For businesses that can't afford downtime</p>
+            <h3 class="plan__name">Scale</h3>
+            <p class="plan__for">For products with real traffic</p>
             <p class="plan__price">
-              <span class="plan__was" data-was-monthly="$13.99" data-was-yearly="$13.99">$13.99</span>
-              <b><span class="plan__num" data-monthly="9.99" data-yearly="6.99">6.99</span></b><span class="plan__per">/mo</span>
+              <span class="plan__was" data-was-monthly="$399" data-was-yearly="$399">$399</span>
+              <b><span class="plan__num" data-monthly="299" data-yearly="199">199</span></b><span class="plan__per">/mo</span>
             </p>
-            <a href="#contact" class="btn btn--primary btn--full">Choose Grow</a>
+            <a href="#contact" class="btn btn--primary btn--full">Choose Scale</a>
             <ul class="plan__feat">
-              <li><b>Unlimited</b> websites</li>
-              <li>150 GB NVMe storage</li>
-              <li>Global CDN included</li>
-              <li>Free migration of all sites</li>
-              <li>Staging environments</li>
+              <li><b>Dedicated</b> GPU-hour pool</li>
+              <li>Autoscaling endpoints, warm pools</li>
+              <li>Fine-tuning jobs included</li>
+              <li>Managed vector DB &amp; RAG pipelines</li>
+              <li>Free parallel migration</li>
               <li>Priority 24/7 support</li>
             </ul>
           </article>
 
           <article class="plan reveal">
-            <h3 class="plan__name">Scale</h3>
-            <p class="plan__for">For high-traffic &amp; e-commerce</p>
+            <h3 class="plan__name">Enterprise</h3>
+            <p class="plan__for">For private, regulated &amp; high-scale AI</p>
             <p class="plan__price">
-              <span class="plan__was" data-was-monthly="$27.99" data-was-yearly="$27.99">$27.99</span>
-              <b><span class="plan__num" data-monthly="19.99" data-yearly="13.99">13.99</span></b><span class="plan__per">/mo</span>
+              <span class="plan__was" data-was-monthly="$1,999" data-was-yearly="$1,999">$1,999</span>
+              <b><span class="plan__num" data-monthly="1,499" data-yearly="999">999</span></b><span class="plan__per">/mo</span>
             </p>
-            <a href="#contact" class="btn btn--ghost btn--full">Choose Scale</a>
+            <a href="#contact" class="btn btn--ghost btn--full">Talk to an engineer</a>
             <ul class="plan__feat">
-              <li>Everything in Grow</li>
-              <li>Dedicated resources</li>
-              <li>400 GB NVMe storage</li>
-              <li>Object cache &amp; Redis</li>
-              <li>Dedicated account engineer</li>
+              <li>Everything in Scale</li>
+              <li>Private single-tenant GPU cluster</li>
+              <li>VPC peering &amp; EU data residency</li>
+              <li>99.99% SLA with automatic credits</li>
+              <li>Dedicated ML engineer</li>
             </ul>
           </article>
         </div>
 
         <p class="plans__note reveal">
-          Prices shown are introductory placeholder rates. Every plan includes the
-          <strong>30-day money-back guarantee</strong> — if we're not the fastest host
-          you've used, you get every cent back. No questions, no retention scripts.
+          Prices shown are introductory placeholder rates; usage beyond included quotas is
+          billed per token/GPU-second with <strong>hard caps you set</strong>. Every plan
+          includes the <strong>30-day money-back guarantee</strong> — if we're not faster
+          and cheaper than your current stack, you get every cent back. No questions, no
+          retention scripts.
         </p>
       </div>
     </section>
@@ -306,17 +309,17 @@
       <div class="container support__grid">
         <div class="support__copy reveal">
           <span class="section__eyebrow">Support</span>
-          <h2 class="section__title">Talk to an engineer.<br /><em>Not a script.</em></h2>
+          <h2 class="section__title">Talk to an ML engineer.<br /><em>Not a script.</em></h2>
           <p class="section__sub">
-            Every support seat at Cloud Industry is held by someone who can actually
-            fix your problem — no tiers, no escalation maze, no "have you tried
-            clearing your cache." When your business is down, minutes are money,
+            Every support seat at Cloud Industry is held by someone who has debugged
+            a CUDA OOM at 2 a.m. — no tiers, no escalation maze, no "have you tried
+            a smaller batch size." When your inference is down, minutes are churn,
             and we act like it.
           </p>
           <ul class="support__channels">
             <li><b>Live chat</b><span>24/7/365 · median first reply under 2 minutes</span></li>
             <li><b>Tickets</b><span>full resolution, median 1.4 hours</span></li>
-            <li><b>Phone</b><span>on Grow &amp; Scale plans — a human picks up</span></li>
+            <li><b>Phone</b><span>on Scale &amp; Enterprise plans — a human picks up</span></li>
           </ul>
         </div>
         <div class="support__stats reveal">
@@ -333,20 +336,20 @@
       <div class="container">
         <div class="section__head reveal">
           <span class="section__eyebrow">Customers</span>
-          <h2 class="section__title">People don't love their host.<br /><em>Ours do — loudly.</em></h2>
+          <h2 class="section__title">People don't love their AI infra.<br /><em>Ours do — loudly.</em></h2>
         </div>
         <div class="quotes">
           <figure class="quote reveal">
-            <blockquote>"Our store's load time went from 3.1s to 0.8s the day we migrated. Conversion is up 14% and I did literally nothing — their team moved everything overnight."</blockquote>
-            <figcaption><b>E-commerce owner</b><span>migrated from a legacy host</span></figcaption>
+            <blockquote>"Our inference bill dropped 58% the week we flipped traffic. Same models, same latency budget — we watched the side-by-side benchmark for two weeks before believing it."</blockquote>
+            <figcaption><b>CTO</b><span>AI SaaS, migrated from a hyperscaler</span></figcaption>
           </figure>
           <figure class="quote reveal">
-            <blockquote>"I opened a chat at 2 a.m. expecting a bot. I got an engineer who fixed a DNS issue my old host had blamed on me for a year. Eleven minutes, done."</blockquote>
-            <figcaption><b>Agency founder</b><span>manages 40+ client sites</span></figcaption>
+            <blockquote>"CUDA OOM on a custom fine-tune at 2 a.m. I opened chat expecting a bot and got an engineer who'd hit the same bug. Eleven minutes, fixed, checkpoint intact."</blockquote>
+            <figcaption><b>ML lead</b><span>runs 30+ fine-tuned models</span></figcaption>
           </figure>
           <figure class="quote reveal">
-            <blockquote>"We got featured in national press and traffic went 50× in an hour. The site didn't blink. That single day paid for a decade of hosting."</blockquote>
-            <figcaption><b>SaaS founder</b><span>Scale plan customer</span></figcaption>
+            <blockquote>"Launch day: 50× traffic in an hour. The endpoints autoscaled, p95 never moved, and the spend cap meant I wasn't afraid to look at the bill."</blockquote>
+            <figcaption><b>Founder</b><span>consumer AI app, Scale plan</span></figcaption>
           </figure>
         </div>
       </div>
@@ -359,9 +362,9 @@
         <div>
           <h2 class="guarantee__title">Try us with zero risk. All of it is ours.</h2>
           <p class="guarantee__sub">
-            Use everything for 30 days. If Cloud Industry isn't measurably faster than your
-            current host, one email gets you a full refund — and we'll even help you move back.
-            We can make that offer because almost no one takes it.
+            Run us in parallel with your current stack for 30 days. If we're not measurably
+            faster and cheaper, one email gets you a full refund — and your weights leave
+            with $0 egress. We can make that offer because almost no one takes it.
           </p>
         </div>
         <a href="#pricing" class="btn btn--primary">Start now <span class="btn__arrow">→</span></a>
@@ -377,28 +380,28 @@
         </div>
         <div class="faq reveal">
           <details class="faq__item">
-            <summary>Will my site go down during migration?<span class="faq__icon">+</span></summary>
-            <p>No. We build a full copy of your site on our platform while your current host keeps serving visitors. You test the copy, and only when you're satisfied do you point DNS at us. There is no moment where your site is offline.</p>
+            <summary>Do you train on my prompts or my data?<span class="faq__icon">+</span></summary>
+            <p>Never. Prompts, outputs, weights and datasets are encrypted, isolated per tenant, and used for exactly one thing: serving your requests. Delete anything anytime — deletion is real, not a soft flag.</p>
           </details>
           <details class="faq__item">
-            <summary>Is the migration really free? What's the catch?<span class="faq__icon">+</span></summary>
-            <p>Really free, for any number of sites, on any plan. The "catch" is our business model: once you experience the speed difference, you stay. The 30-day guarantee means the risk of finding out is entirely ours.</p>
+            <summary>What about cold starts?<span class="faq__icon">+</span></summary>
+            <p>Popular open models are cached close to the GPUs, and paid tiers keep warm pools, so scale-from-zero typically completes before your retry logic notices. If a model does need a cold load, the console shows you the expected warm-up before you route traffic to it.</p>
           </details>
           <details class="faq__item">
-            <summary>What happens when my traffic spikes?<span class="faq__icon">+</span></summary>
-            <p>Your site stays up. Shared plans include burst capacity, and VPS resources resize live without a reboot. We notify you about sustained growth and recommend a plan — we never throttle you into a sales call.</p>
+            <summary>Which GPUs do you run, and is capacity actually available?<span class="faq__icon">+</span></summary>
+            <p>H100, A100 and L40S pools, with reserved capacity for Scale and Enterprise plans. The console shows live availability per region — we'd rather show you the real number than promise you a waitlist.</p>
           </details>
           <details class="faq__item">
-            <summary>Do you lock me in with contracts or proprietary tech?<span class="faq__icon">+</span></summary>
-            <p>No. Standard stack (Linux, LiteSpeed/NGINX, MySQL/MariaDB), full backups you can download anytime, and no exit fees. We'd rather earn your renewal than trap it — that's also why we help you move back if you leave within the guarantee window.</p>
+            <summary>Am I locked in?<span class="faq__icon">+</span></summary>
+            <p>No. Endpoints are OpenAI-compatible, weights and embeddings export anytime, and egress is $0 — leaving is a config change, not a project. We'd rather earn your renewal than trap it.</p>
           </details>
           <details class="faq__item">
-            <summary>What does the 99.99% uptime SLA actually mean?<span class="faq__icon">+</span></summary>
-            <p>It's contractual, not decorative: if measured monthly uptime falls below 99.99%, you're automatically credited per our SLA — you don't have to notice, file, or fight for it.</p>
+            <summary>How do I keep costs from exploding?<span class="faq__icon">+</span></summary>
+            <p>Hard budget caps, per-endpoint spend limits and anomaly alerts are built in on every plan. When a cap is hit, you choose what happens — throttle, queue, or stop — and you chose it in advance, calmly, not at 3 a.m.</p>
           </details>
           <details class="faq__item">
-            <summary>How fast is support, honestly?<span class="faq__icon">+</span></summary>
-            <p>Live chat median first response is under 2 minutes, around the clock. Every agent is a systems engineer with server access — the person who answers is the person who fixes.</p>
+            <summary>What does the 99.99% inference SLA actually mean?<span class="faq__icon">+</span></summary>
+            <p>It's contractual, not decorative: if measured monthly endpoint availability falls below 99.99%, you're automatically credited per our SLA — you don't have to notice, file, or fight for it.</p>
           </details>
         </div>
       </div>
@@ -408,17 +411,17 @@
     <section class="cta" id="contact">
       <div class="container">
         <div class="cta__card reveal">
-          <h2 class="cta__title">Your visitors are waiting.<br /><em>Don't make them.</em></h2>
+          <h2 class="cta__title">Your users are waiting on your model.<br /><em>Don't make them.</em></h2>
           <p class="cta__sub">
-            Launch a new site in minutes, or hand us your current host's login and
-            wake up on faster infrastructure tomorrow. Either way, the guarantee
+            Deploy a model in minutes, or show us your current stack and watch it
+            run cheaper side by side within 48 hours. Either way, the guarantee
             means you risk nothing.
           </p>
           <div class="cta__actions">
             <a class="btn btn--primary btn--big" href="#pricing">Choose a plan <span class="btn__arrow">→</span></a>
-            <a class="btn btn--ghost btn--big" href="mailto:hello@cloudindustry.example?subject=Free%20migration%20request">Request free migration</a>
+            <a class="btn btn--ghost btn--big" href="mailto:hello@cloudindustry.example?subject=Free%20parallel%20run%20request">Request free parallel run</a>
           </div>
-          <p class="hero__assure">30-day money-back &nbsp;·&nbsp; Free migration &nbsp;·&nbsp; No setup fees &nbsp;·&nbsp; Cancel anytime</p>
+          <p class="hero__assure">30-day money-back &nbsp;·&nbsp; Free parallel migration &nbsp;·&nbsp; $0 egress &nbsp;·&nbsp; Cancel anytime</p>
         </div>
       </div>
     </section>
@@ -430,22 +433,23 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <span class="nav__logo"><span class="nav__logo-mark">▲</span> cloud<span class="nav__logo-accent">industry</span></span>
-        <p data-cms="site.footer.contactBlurb" data-cms-html>High-performance cloud hosting.<br />Fast. Guarded. Answered in minutes.</p>
+        <p data-cms="site.footer.contactBlurb" data-cms-html>AI infrastructure for teams that ship.<br />Fast. Guarded. Answered in minutes.</p>
         <p class="footer__status"><span class="status-pill__dot"></span> All systems operational</p>
       </div>
       <div class="footer__col">
         <h4>Services</h4>
-        <a href="#services">Web Hosting</a>
-        <a href="#services">Cloud VPS</a>
-        <a href="#services">Dedicated Servers</a>
-        <a href="#services">Managed WordPress</a>
-        <a href="#services">Domains &amp; DNS</a>
-        <a href="#services">CDN &amp; Edge</a>
+        <a href="#services">GPU Cloud</a>
+        <a href="#services">Inference Endpoints</a>
+        <a href="#services">Model Hosting</a>
+        <a href="#services">Fine-tuning</a>
+        <a href="#services">Vector &amp; RAG</a>
+        <a href="#services">Agent Runtime</a>
       </div>
       <div class="footer__col">
         <h4>Company</h4>
+        <a href="platform.html">Tetra Cloud platform</a>
         <a href="#pricing">Pricing</a>
-        <a href="#migration">Free migration</a>
+        <a href="#migration">Free parallel migration</a>
         <a href="tetra.html">Tetra Host console</a>
         <a href="#support">Support</a>
         <a href="#faq">FAQ</a>

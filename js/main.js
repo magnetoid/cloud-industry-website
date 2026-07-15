@@ -117,12 +117,12 @@
   /* ── hero terminal: provisioning sequence ────────────── */
   const termBody = document.getElementById("termBody");
   if (termBody) {
-    const CMD = "cloud deploy my-store.com";
+    const CMD = "cloud deploy llama-3-70b";
     const LINES = [
-      '<span class="t-dim">→ provisioning NVMe instance …</span> <span class="t-ok">done (11s)</span>',
-      '<span class="t-dim">→ TLS certificate issued …</span> <span class="t-ok">done</span>',
-      '<span class="t-dim">→ replicating to 210 edge locations …</span> <span class="t-ok">done</span>',
-      '<span class="t-ok">✓ live in 38s</span> <span class="t-dim">— your visitors never waited</span>',
+      '<span class="t-dim">→ allocating H100 node …</span> <span class="t-ok">done (9s)</span>',
+      '<span class="t-dim">→ weights pulled from edge cache …</span> <span class="t-ok">done</span>',
+      '<span class="t-dim">→ endpoint scaled to 210 regions …</span> <span class="t-ok">done</span>',
+      '<span class="t-ok">✓ serving in 41s</span> <span class="t-dim">— first token 24ms</span>',
     ];
     const renderAll = () => {
       termBody.innerHTML =

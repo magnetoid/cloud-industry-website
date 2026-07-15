@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tetra Cloud — The AI-First Platform. Edge, Compute and Intelligence in One Stack.</title>
+  <meta name="description" content="Tetra Cloud is Cloud Industry's AI-first platform: a global edge network, EU-based GPU compute and a 400+ model intelligence gateway — composed into one console, one API and one invoice." />
+  <meta property="og:title" content="Tetra Cloud — The AI-First Platform" />
+  <meta property="og:description" content="Edge network, EU GPU compute and a 400+ model gateway with automatic fallbacks — one console, one API, one invoice." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Geist:wght@400..900&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet" />
+  <script>
+    /* set theme before first paint to avoid a flash */
+    document.documentElement.dataset.theme =
+      localStorage.getItem("theme") ||
+      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232547F4'/><text x='50' y='71' font-size='58' text-anchor='middle' fill='white' font-family='monospace'>▲</text></svg>" />
+</head>
+<body data-cms-page="platform">
+
+  <!-- ══════════ NAV ══════════ -->
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-mark">▲</span> cloud<span class="nav__logo-accent">industry</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="platform.html" aria-current="page">Platform</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#migration">Migration</a>
+        <a href="tetra.html">Tetra Host</a>
+        <a href="index.html#support">Support</a>
+      </nav>
+      <a class="status-pill" href="index.html#support" title="Live platform status">
+        <span class="status-pill__dot" aria-hidden="true"></span> All systems operational
+      </a>
+      <button class="theme-toggle" aria-label="Switch color theme" title="Switch theme">☾</button>
+      <a href="index.html#pricing" class="btn btn--small">Get started <span class="btn__arrow">→</span></a>
+      <button class="nav__burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <button class="theme-toggle" aria-label="Switch color theme" title="Switch theme">☾</button>
+    <a href="platform.html">Platform</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#migration">Migration</a>
+    <a href="tetra.html">Tetra Host</a>
+    <a href="index.html#support">Support</a>
+    <a href="index.html#pricing" class="btn">Get started →</a>
+  </div>
+
+  <main>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="hero__eyebrow reveal">
+            <span class="status-pill__dot" aria-hidden="true"></span>
+            <span data-cms="hero.eyebrow">tetra cloud · the platform under everything</span>
+          </p>
+          <h1 class="hero__title" data-cms="hero.title" data-cms-html>
+            One AI-first stack.<br />Three layers.<br /><em>Zero glue code.</em>
+          </h1>
+          <p class="hero__sub reveal" data-cms="hero.sub" data-cms-html>
+            Most AI products are duct tape: a GPU broker here, a vector database
+            there, a model API from someone else — and you own the 3 a.m. failures
+            between them. <strong>Tetra Cloud composes the whole stack</strong> —
+            a global edge network, EU-based compute and a 400+ model intelligence
+            gateway — behind <strong>one console, one API, one invoice.</strong>
+          </p>
+          <div class="hero__cta reveal">
+            <a href="index.html#pricing" class="btn btn--primary">Start on Tetra Cloud <span class="btn__arrow">→</span></a>
+            <a href="#layers" class="btn btn--ghost">See the layers</a>
+          </div>
+          <p class="hero__assure reveal" data-cms="hero.assure" data-cms-html>
+            One invoice &nbsp;·&nbsp; One support team that owns every layer &nbsp;·&nbsp; $0 egress
+          </p>
+        </div>
+
+        <!-- stack panel: the three layers -->
+        <div class="hero__panel reveal" aria-label="Tetra Cloud stack">
+          <div class="term">
+            <div class="term__bar">
+              <i></i><i></i><i></i>
+              <span>tetra cloud — stack</span>
+              <b class="term__live"><span class="status-pill__dot"></span> live</b>
+            </div>
+            <div class="stack">
+              <div class="stack__layer">
+                <span class="stack__tag">layer/edge</span>
+                <b>Edge Network</b>
+                <small>300+ cities · WAF · DDoS · edge inference · zero-egress storage</small>
+              </div>
+              <div class="stack__layer stack__layer--accent">
+                <span class="stack__tag">layer/intelligence</span>
+                <b>Model Gateway</b>
+                <small>400+ models · smart routing · automatic fallbacks · ZDR controls</small>
+              </div>
+              <div class="stack__layer">
+                <span class="stack__tag">layer/compute</span>
+                <b>EU Compute</b>
+                <small>dedicated GPUs · Kubernetes · block &amp; object storage · private networks</small>
+              </div>
+            </div>
+            <div class="term__metrics">
+              <div class="term__metric"><b>3</b><small>layers, one console</small></div>
+              <div class="term__metric"><b>400<i>+</i></b><small>models, one API</small></div>
+              <div class="term__metric"><b>1</b><small>invoice, one SLA</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ LAYER: INTELLIGENCE ══════════ -->
+    <section class="section" id="layers">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Layer 01 — Intelligence</span>
+          <h2 class="section__title">Every model on Earth.<br /><em>One API key.</em></h2>
+          <p class="section__sub">The Tetra Cloud gateway speaks OpenAI-compatible on the outside and routes to 400+ models from every serious lab on the inside. When a provider stumbles, your users never find out.</p>
+        </div>
+        <div class="services services--3">
+          <article class="svc reveal">
+            <span class="svc__id">ai/gateway</span>
+            <h3>400+ Models, One Endpoint</h3>
+            <p>Frontier and open models — GPT, Claude, Gemini, Llama, Mistral, Qwen — behind a single OpenAI-compatible API. Switching models is one string, not one sprint.</p>
+            <ul class="svc__spec"><li>OpenAI-compatible</li><li>70+ providers</li><li>One key, one bill</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">ai/routing</span>
+            <h3>Smart Routing &amp; Fallbacks</h3>
+            <p>Route each request by price, latency or quality. If a provider errors or rate-limits, the gateway fails over automatically — your app never sees the outage.</p>
+            <ul class="svc__spec"><li>Auto provider failover</li><li>Model fallback chains</li><li>Price/latency routing</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">ai/privacy</span>
+            <h3>Zero-Data-Retention</h3>
+            <p>Per-request ZDR controls, BYOK for your existing provider contracts, and hard spend limits per key. Compliance that's a toggle, not a quarter-long project.</p>
+            <ul class="svc__spec"><li>ZDR controls</li><li>Bring your own keys</li><li>Per-key spend caps</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ LAYER: EDGE ══════════ -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Layer 02 — Edge</span>
+          <h2 class="section__title">Closer to your users<br /><em>than their own router.</em></h2>
+          <p class="section__sub">A global anycast network in 300+ cities carries your app, caches your weights and stops attacks before they reach a single GPU.</p>
+        </div>
+        <div class="services services--3">
+          <article class="svc reveal">
+            <span class="svc__id">edge/net</span>
+            <h3>Global CDN &amp; Anycast DNS</h3>
+            <p>Static assets, model responses and API caches served from 300+ cities. A user in Tokyo gets the same p95 as one next to the datacenter.</p>
+            <ul class="svc__spec"><li>300+ edge cities</li><li>Anycast DNS</li><li>Smart response caching</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">edge/compute</span>
+            <h3>Edge Compute &amp; Inference</h3>
+            <p>Serverless functions and small-model inference at the edge — classify, embed, moderate and personalize before the request ever crosses an ocean.</p>
+            <ul class="svc__spec"><li>Serverless workers</li><li>Edge AI inference</li><li>Vector search at the edge</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">edge/shield</span>
+            <h3>WAF, DDoS &amp; Zero-Egress Storage</h3>
+            <p>Always-on DDoS mitigation, a web application firewall on every route, and object storage that never charges you to take your own data out.</p>
+            <ul class="svc__spec"><li>Always-on DDoS shield</li><li>WAF on every plan</li><li>$0 egress object storage</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ LAYER: COMPUTE ══════════ -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Layer 03 — Compute</span>
+          <h2 class="section__title">EU steel under<br /><em>everything you run.</em></h2>
+          <p class="section__sub">Dedicated GPU and CPU capacity in European datacenters — GDPR-native, single-tenant when you need it, and priced like someone who respects your CFO.</p>
+        </div>
+        <div class="services services--3">
+          <article class="svc reveal">
+            <span class="svc__id">compute/gpu</span>
+            <h3>Dedicated GPU Servers</h3>
+            <p>Single-tenant GPU machines for training, fine-tuning and private inference. Your weights never share silicon with a stranger.</p>
+            <ul class="svc__spec"><li>Single-tenant hardware</li><li>Per-second cloud GPUs</li><li>Reserved capacity pools</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">compute/k8s</span>
+            <h3>Kubernetes &amp; Cloud Servers</h3>
+            <p>Managed Kubernetes, dedicated-vCPU instances and Arm64 nodes for everything around the model — APIs, queues, workers, schedulers.</p>
+            <ul class="svc__spec"><li>Managed Kubernetes</li><li>Dedicated vCPU instances</li><li>Load balancers included</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">compute/data</span>
+            <h3>Storage, Networks &amp; Residency</h3>
+            <p>Block volumes, S3-compatible object storage and private networks with firewalls — all physically in the EU, all under GDPR, all on one invoice.</p>
+            <ul class="svc__spec"><li>EU data residency</li><li>S3-compatible storage</li><li>Private networks &amp; firewalls</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ HONESTY BAND ══════════ -->
+    <section class="guarantee reveal">
+      <div class="container guarantee__inner">
+        <div class="guarantee__seal" aria-hidden="true">3<small>layers</small></div>
+        <div>
+          <h2 class="guarantee__title">Built on giants. Answered by us.</h2>
+          <p class="guarantee__sub">
+            Tetra Cloud composes best-in-class infrastructure — Cloudflare's edge network,
+            Hetzner's EU datacenters, OpenRouter's model gateway — into one platform. We
+            tell you this openly because it's a feature: proven layers, operated and
+            supported by one team that owns the whole stack. When something breaks, you
+            call us, and it's never "the other vendor's fault."
+          </p>
+        </div>
+        <a href="index.html#pricing" class="btn btn--primary">Start now <span class="btn__arrow">→</span></a>
+      </div>
+    </section>
+
+    <!-- ══════════ CTA ══════════ -->
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta__card reveal">
+          <h2 class="cta__title">Stop gluing vendors together.<br /><em>Ship on one stack.</em></h2>
+          <p class="cta__sub">
+            Every hour spent wiring a GPU broker to a vector DB to a model API is an
+            hour your competitor spent shipping. Tetra Cloud is already wired.
+          </p>
+          <div class="cta__actions">
+            <a class="btn btn--primary btn--big" href="index.html#pricing">Choose a plan <span class="btn__arrow">→</span></a>
+            <a class="btn btn--ghost btn--big" href="mailto:hello@cloudindustry.example?subject=Tetra%20Cloud%20architecture%20call">Talk architecture with an engineer</a>
+          </div>
+          <p class="hero__assure">30-day money-back &nbsp;·&nbsp; $0 egress &nbsp;·&nbsp; One invoice, one SLA</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="nav__logo"><span class="nav__logo-mark">▲</span> cloud<span class="nav__logo-accent">industry</span></span>
+        <p data-cms="site.footer.contactBlurb" data-cms-html>AI infrastructure for teams that ship.<br />Fast. Guarded. Answered in minutes.</p>
+        <p class="footer__status"><span class="status-pill__dot"></span> All systems operational</p>
+      </div>
+      <div class="footer__col">
+        <h4>Platform</h4>
+        <a href="platform.html">Tetra Cloud</a>
+        <a href="tetra.html">Tetra Host console</a>
+        <a href="platform.html#layers">Model gateway</a>
+        <a href="platform.html#layers">Edge network</a>
+        <a href="platform.html#layers">EU compute</a>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#migration">Free parallel migration</a>
+        <a href="index.html#support">Support</a>
+        <a href="index.html#faq">FAQ</a>
+      </div>
+      <div class="footer__col">
+        <h4>Elsewhere</h4>
+        <a href="https://console.cloud-industry.com" rel="noopener">console.cloud-industry.com</a>
+        <a href="#" rel="noopener">Status page</a>
+        <a href="#" rel="noopener">X / Twitter</a>
+        <a href="#" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span data-cms="site.footer.copyright">© 2026 Cloud Industry. All rights reserved.</span>
+      <a href="#top" class="footer__top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- motion stack: GSAP ScrollTrigger + Lenis smooth scroll.
+       main.js feature-detects these — the site fully works without them. -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+  <!-- imba-cms backend: fill in your Supabase project URL + anon key to enable
+       (see docs/cms-integration.md). Empty config = static copy only. -->
+  <script>window.IMBA_CMS = { url: "", anonKey: "" };</script>
+  <script src="js/cms.js" defer></script>
+</body>
+</html>
