@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "index.html"
+      - "platform.html"
       - "tetra.html"
       - "css/**"
       - "js/**"
