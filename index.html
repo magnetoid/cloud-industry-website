@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cloud Industry — AI Infrastructure That Never Blinks. GPUs, Inference, 99.99% SLA.</title>
-  <meta name="description" content="Cloud Industry is AI infrastructure for power users and businesses: on-demand GPU compute, serverless inference endpoints, model hosting, fine-tuning, vector & RAG infrastructure, agent runtimes and 24/7 ML engineer support. Free parallel migration, 30-day money-back guarantee." />
+  <meta name="description" content="Cloud Industry is AI infrastructure for power users and businesses: on-demand GPU compute, serverless inference endpoints, model hosting, fine-tuning, vector & RAG infrastructure, agent runtimes, plus AI-native cost intelligence — FinOps run by AI: spend forecasting, right-sizing and a Cost Copilot that trims your bill. Free parallel migration, 30-day money-back guarantee." />
   <meta property="og:title" content="Cloud Industry — AI Infrastructure That Never Blinks" />
   <meta property="og:description" content="H100-class GPUs, sub-25ms first tokens, a 99.99% inference SLA and ML engineers who answer in minutes. We mirror your stack for free — flip traffic when the numbers win." />
   <meta property="og:type" content="website" />
@@ -32,6 +32,7 @@
       <nav class="nav__links" aria-label="Primary">
         <a href="platform.html">Platform</a>
         <a href="#services">Services</a>
+        <a href="#cost">Cost intelligence</a>
         <a href="#pricing">Pricing</a>
         <a href="#migration">Migration</a>
         <a href="tetra.html">Tetra Host</a>
@@ -52,6 +53,7 @@
     <button class="theme-toggle" aria-label="Switch color theme" title="Switch theme">☾</button>
     <a href="platform.html">Platform</a>
     <a href="#services">Services</a>
+    <a href="#cost">Cost intelligence</a>
     <a href="#pricing">Pricing</a>
     <a href="#migration">Migration</a>
     <a href="tetra.html">Tetra Host</a>
@@ -63,6 +65,7 @@
 
     <!-- ══════════ HERO ══════════ -->
     <section class="hero">
+      <canvas class="hero__fx" aria-hidden="true"></canvas>
       <div class="container hero__grid">
         <div class="hero__copy">
           <p class="hero__eyebrow reveal">
@@ -196,8 +199,60 @@
       </div>
     </section>
 
+    <!-- ══════════ COST INTELLIGENCE ══════════ -->
+    <section class="section section--alt" id="cost">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Cost intelligence</span>
+          <h2 class="section__title" data-scramble>AI is expensive when nobody's watching.<br /><em>So we put an AI on the invoice.</em></h2>
+          <p class="section__sub">Raw GPUs and inference are only half a platform. The other half is a costing layer that estimates, forecasts and actively trims your spend — the same class of model that serves your traffic also reads your bill and shows you where the money leaks. FinOps for AI, run <em>by</em> AI.</p>
+        </div>
+
+        <div class="services services--3">
+          <article class="svc reveal">
+            <span class="svc__id">cost/estimate</span>
+            <h3>Upfront Cost Estimator</h3>
+            <p>Every job, endpoint and fine-tune shows its projected cost <em>before</em> you press run — per token, per GPU-second, per month. The invoice is never the surprise.</p>
+            <ul class="svc__spec"><li>Priced before you run</li><li>Per-token &amp; per-GPU-second</li><li>Side-by-side model compare</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">cost/forecast</span>
+            <h3>Spend Forecasting</h3>
+            <p>We read your live traffic curve and project next month's invoice with a confidence band — so finance sees the number coming instead of flinching at it.</p>
+            <ul class="svc__spec"><li>30 / 60 / 90-day projections</li><li>Traffic-aware confidence bands</li><li>Per-team &amp; per-endpoint</li></ul>
+          </article>
+          <article class="svc svc--feature reveal">
+            <span class="svc__id">cost/copilot</span>
+            <h3>Cost Copilot <span class="svc__tag">AI × cost</span></h3>
+            <p>The combination the platform is built on: an agent that watches every dollar, right-sizes GPUs, swaps in cheaper models that still pass your evals, and opens a one-click savings change you approve.</p>
+            <ul class="svc__spec"><li>Autonomous right-sizing</li><li>Eval-gated model swaps</li><li>One-click savings you approve</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">cost/guardrails</span>
+            <h3>Budget Guardrails</h3>
+            <p>Hard caps per project, endpoint and API key. When a limit is reached you choose in advance what happens — throttle, queue or stop — so 3 a.m. stays calm.</p>
+            <ul class="svc__spec"><li>Hard caps everywhere</li><li>Throttle / queue / stop</li><li>Decided in advance</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">cost/anomaly</span>
+            <h3>Anomaly Detection</h3>
+            <p>A model trained on your own spend baseline flags a runaway loop or a leaking retry storm within minutes — and pauses it if you let it — long before the invoice does.</p>
+            <ul class="svc__spec"><li>Learns your baseline</li><li>Minute-level alerts</li><li>Optional auto-pause</li></ul>
+          </article>
+          <article class="svc reveal">
+            <span class="svc__id">cost/rightsize</span>
+            <h3>Right-sizing Engine</h3>
+            <p>Point it at an endpoint and it finds the cheapest GPU and model that still clears your latency SLA — continuously, as traffic and spot prices move. Savings without the spreadsheet.</p>
+            <ul class="svc__spec"><li>Cheapest node that meets SLA</li><li>Spot &amp; reserved blending</li><li>Continuous, not one-off</li></ul>
+          </article>
+        </div>
+
+        <p class="steps__note reveal">Cost intelligence ships on every plan — estimator and guardrails from day one, Cost Copilot &amp; forecasting from Scale up. Teams that switch it on trim a meaningful slice off AI spend in the first quarter; the console shows your own number, not ours.</p>
+      </div>
+    </section>
+
     <!-- ══════════ MIGRATION ══════════ -->
-    <section class="section section--alt" id="migration">
+    <section class="section" id="migration">
       <div class="container">
         <div class="section__head reveal">
           <span class="section__eyebrow">Switching</span>
@@ -226,7 +281,7 @@
     </section>
 
     <!-- ══════════ PRICING ══════════ -->
-    <section class="section" id="pricing">
+    <section class="section section--alt" id="pricing">
       <div class="container">
         <div class="section__head reveal">
           <span class="section__eyebrow">Pricing</span>
@@ -305,7 +360,7 @@
     </section>
 
     <!-- ══════════ SUPPORT ══════════ -->
-    <section class="section section--alt" id="support">
+    <section class="section" id="support">
       <div class="container support__grid">
         <div class="support__copy reveal">
           <span class="section__eyebrow">Support</span>
@@ -332,7 +387,7 @@
     </section>
 
     <!-- ══════════ TESTIMONIALS ══════════ -->
-    <section class="section" id="testimonials">
+    <section class="section section--alt" id="testimonials">
       <div class="container">
         <div class="section__head reveal">
           <span class="section__eyebrow">Customers</span>
@@ -372,7 +427,7 @@
     </section>
 
     <!-- ══════════ FAQ ══════════ -->
-    <section class="section section--alt" id="faq">
+    <section class="section" id="faq">
       <div class="container container--narrow">
         <div class="section__head reveal">
           <span class="section__eyebrow">FAQ</span>
@@ -398,6 +453,10 @@
           <details class="faq__item">
             <summary>How do I keep costs from exploding?<span class="faq__icon">+</span></summary>
             <p>Hard budget caps, per-endpoint spend limits and anomaly alerts are built in on every plan. When a cap is hit, you choose what happens — throttle, queue, or stop — and you chose it in advance, calmly, not at 3 a.m.</p>
+          </details>
+          <details class="faq__item">
+            <summary>What is Cost Copilot, and does it change my deployment without asking?<span class="faq__icon">+</span></summary>
+            <p>Cost Copilot is the AI layer that reads your spend and proposes savings — right-sizing a GPU, blending in spot capacity, or swapping a model for a cheaper one that still passes your evals. By default it only <em>proposes</em>: every change lands as a one-click diff you approve. You can grant it autonomy on specific low-risk actions (like scaling idle warm pools down) whenever you're ready — never before.</p>
           </details>
           <details class="faq__item">
             <summary>What does the 99.99% inference SLA actually mean?<span class="faq__icon">+</span></summary>
@@ -446,6 +505,15 @@
         <a href="#services">Agent Runtime</a>
       </div>
       <div class="footer__col">
+        <h4>Cost intelligence</h4>
+        <a href="#cost">Cost Estimator</a>
+        <a href="#cost">Spend Forecasting</a>
+        <a href="#cost">Cost Copilot</a>
+        <a href="#cost">Budget Guardrails</a>
+        <a href="#cost">Anomaly Detection</a>
+        <a href="#cost">Right-sizing Engine</a>
+      </div>
+      <div class="footer__col">
         <h4>Company</h4>
         <a href="platform.html">Tetra Cloud platform</a>
         <a href="#pricing">Pricing</a>
@@ -473,6 +541,9 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="js/main.js"></script>
+  <!-- high-tech FX layer: cursor spotlight, hero neural canvas, scroll rail,
+       reactive cards, magnetic buttons, decode-on-reveal. Fully progressive. -->
+  <script src="js/fx.js" defer></script>
   <!-- imba-cms backend: fill in your Supabase project URL + anon key to enable
        (see docs/cms-integration.md). Empty config = static copy only. -->
   <script>window.IMBA_CMS = { url: "", anonKey: "" };</script>
